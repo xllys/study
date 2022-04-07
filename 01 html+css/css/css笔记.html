@@ -1,0 +1,338 @@
+
+css: Cascading Style Sheets (层叠样式表)
+修饰网页
+
+一 css引入方式
+
+1.行内样式：
+	格式：
+	<div style="background: red;"></div>
+2.嵌入式
+	格式：
+	<style type="text/css"></style>
+	位置：head中写入
+3.链接式:
+	位置：head中写入
+	标签：link:定义文档与外部资源的关系
+	格式：(rel：规定当前文本与被链接文档之间的关系)
+	<link rel="stylesheet" type="text/css" href="">
+
+4.导入式：
+	格式：@import url('b.css')
+	**从a.css出发找到的b.css，不是index.html出发找到的b.css**
+
+二 css选择器--基本（元素）
+1 *  通配选择器,选择所有的元素
+     使用场景：*{margin:0;padding:0;}
+2 element 元素选择器，选择指定元素
+3 #id id选择器，选择元素id属性值为#id的元素
+4 .class class选择器,选择元素class属性值为.class的元素
+
+三 关系选择器
+
+1.后代元素：
+	E F 包含选择器，选择所有包含在E元素里面的F元素
+	E>F 子元素选择器，选择所有作为E元素的子元素F
+2.兄弟元素：
+	E+F 相邻选择器，选择紧贴在E元素之后的F元素
+	E~F 兄弟选择器，选择E元素之后所有兄弟的F元素
+
+四 伪类选择器
+
+E:hover 设置鼠标悬停在元素上时出发的样式
+
+五 属性选择器
+
+E[attr]  选择具有attr属性的E元素
+
+六 选择器的权重
+1.大小
+!important > 行内 > id > class > 标签 > 通配（*）
+	
+***选择器相同的情况下，后者覆盖前者
+
+2.计算
+	!important:无穷大
+	行内 ：1000
+	id ：100
+	class|属性|伪类 ：10
+	标签 ：1
+	通配（*）：0
+
+
+七 尺寸大小
+	widht: 宽度
+	height: 高度
+
+	---width和heighht的默认值是auto---
+
+	***auto和%的区别：
+	1.auto:会将元素撑开至整个父元素width，但是会减去margin+padding+border
+	2.%:会强制将元素变成父元素一样的宽度，并且额外的空间（margin+padding+border）会加到width上
+
+
+八 单位
+	绝对单位：不会因为其他元素的尺寸变化而变化。
+	相对单位：没有一个固定的度量值，而是由其他元素尺寸来决定的相对值。
+	px: 像素  （绝对单位）
+	vw: 1%视口（浏览器可视区域）的宽度
+	vh: 1%视口（浏览器可视区域）的高度
+	%： 相对于父元素的宽度或字体大小
+------------------注意-----------------
+1.%与父元素有关系
+2.auto与子元素有关系
+3.height：100%不生效原因：如果包含块的高度没有显示，并且该元素不是绝对定位，则计算值为auto，也就是说子元素100% * auto = NaN,所以结算无效。
+
+九 元素之间的转换
+
+元素之间的转换属性:
+	display:none           元素隐藏且不占位置
+	display:block          xxx元素转换成块
+	display:inline         xxx元素转换成行内
+	display:inline-block   xxx元素转换成行内块
+
+十 css文字样式
+
+>>1.字体样式： font-family
+2.字体大小： font-size
+(每个浏览器可能默认大小都不一样)
+3.字体粗细： font-weight
+	blod,100-900 
+4.文本颜色： color
+	color:#ff0000===>简写：#f00
+	color:rgba(255,255,255,255)
+	color:red
+5.首行文本缩进： text-indent
+6.文本水平对齐方式: text-align
+	left,right,center
+7.设置文本装饰： text-decoration
+	删除线：line-through
+	定义标准文本：none
+	下划线：underline
+	**如何取消a链接下划线：text-decoration:none;
+8.显示光标类型： cursor
+	cursor:pointer;
+
+>>1.列表样式：line-style
+	去掉列表样式：none
+2.单行文字溢出显示...
+	规定当文本溢出元素时发生的事情:text-overflow: ellipsis;
+	overflow: hidden; ===>溢出隐藏
+	white-space: nowrap; ===>不换行
+3.多行文字溢出显示...
+	display: -webkit-box;	
+	webkit-box-orient:vertical;
+	-webkit-line-clamp:4;  ===>在第几行显示
+	overflow: hidden;
+
+十一 边框border
+1.border: 1px solid #f00;
+	1px:   边框尺寸 
+	solid: 实线 
+	dashed: 虚线
+	#f00： 颜色
+2.
+     border-left:   左边框
+	border-right:  右边框
+	border-top:    上边框
+	border-bottom: 下边框
+3.颜色：默认颜色就是color
+border-color: 上 右 下 左
+
+**********1.三角怎么做
+		2.border如何实现0.5px的线
+
+十二 背景
+1.背景: background-color
+	background: red;
+	background: #f00;
+2.背景图 ： background-image
+	background:url('xxx.png')
+2-1.规定如何重复背景图像：background-repeat:repeat x:横向   repeat-y：纵向   no-repeat：不重复
+2-2.背景图元素起始位置：background-position：x y
+                      background-position：right [center默认]（**只设置x方向，y默认走center）
+                      图像起始位置时：0，0  居中50%，右下角100%，100%
+2-3.规定背景图尺寸：background--size:关键字，百分比，数字
+@关键字：
+	图片大于盒子尺寸===>缩小 [contain]  
+	图片小于盒子尺寸===>放大 [cover]
+@百分比: x y
+ 	设置x方向，系统会自动算y值[按照比例]
+
+十三 盒模型
+
+1.组成部分
+	content(width|height) + padding + border + margin
+2.padding:内边距===>值：百分比，数值，没有负值
+@数值:
+	padding-left
+	padding-right
+	padding-bottom
+	padding-top
+	padding: 50px (上、右、下、左)
+	padding: 20px (上、下) 30px (右、左)
+	padding: 10px (上) 20px (右、左) 30px (下)
+@百分比:
+	百分比只和父元素width计算
+3.margin:外边距===>值：百分比，数值，负值
+@数值:
+	margin-left
+	margin-right
+	margin-bottom
+	margin-top
+	margin: 50px (上、右、下、左)
+	margin: 20px (上、下) 30px (右、左)
+	margin: 10px (上) 20px (右、左) 30px (下)
+@百分比:
+	百分比只和父元素width计算
+@auto:适应剩余空间
+	不生效：没有剩余空间占有
+
+4.两种盒模型：
+w3c标准：width = 宽度
+ie标准： width = content + padding + border
+
+切换盒模型的标准：
+	w3c:box-sizing:content-box
+	ie :box-sizing:border-box
+
+十四 浮动  float
+1.值
+	left,right
+2.特性：
+	包裹性（收缩，隔绝）
+	破坏性:会让负元素的高度塌陷（不是bug,【是标准】）
+3.清除浮动*****实现文字环绕*****
+	a.多加一个块元素，加入样式clear:both（不常用）
+	b.给父元素加入伪类after,样式
+		.g-container:after{
+		content: "";
+		clear: both;
+		display: block;
+		}
+
+
+十五 overflow:当内容溢出的时候的表现
+1.值
+	溢出隐藏 : hidden
+	溢出隐藏但是还有滚动条： scroll
+	overflow-y: scroll;
+	overflow-y: scroll;
+2.BFC
+	overflow: hidden; 可以清除浮动（为什么）
+	a.了解BFC 解释BFC：块级格式化上下文
+	b.BFC的原则：如果一个元素具有BFC，那么内部元素再怎么弄，都不会影响到外面的元素
+	c.如何触发BFC呢
+		html根元素
+		float不是none
+		overflow的值是：auto，scroll，hidden
+		display值是：table-cell
+		position的值不是：relative和static
+
+十六 双飞翼布局
+	写一个左中右布局占满屏幕，其中左，右俩块固定宽200，中间自适应宽，要求先加载中间块，请写出结构及样式。 
+	1.左中右布局占满屏幕 
+	2.左，右宽度是200，中间自适应 
+	3.先加载中间块 
+
+
+十七 定位
+1.相对定位 position:relative
+	a.值(正数，负数，%)：left,right,top,bottom
+	***注意：left和right和top和b0ttom同时出现===>left干掉right，top干掉bottom
+	b.定位标准： 自身定位
+	c.保留自己原来空间，原来的空间还占有
+
+2.绝对定位 position:absolute
+	a.如果子元素的所有上级元素没有relative，位置将会依据浏览器左上角开始计算
+	  如果父元素加入了relative，则从父元素左上角开始计算
+
+	b.脱离文档流，独立对象存在，但是没有占位
+
+	c.left,top,right,bottom可以同时出现
+	  如果同时出现了则是拉伸的效果
+3.无依赖定位
+	如果absolute不配合  relative和left,right,top,bottom去使用q`
+	*****位置跟随*****
+
+
+十八 元素居中
+	一个200*200的div在不同分辨率屏幕上下左右居中，用css实现
+
+
+十九 固定定位 position:fixed
+
+二十 层级关系 z-index ===>position
+	z-index 数值越大，则在上面
+
+二十一 搜索框布局实现
+1.outline:绘制于元素周围的一条线
+	去除：outline:none;
+2.边框圆角:border-radius
+	值：数值（px），%
+
+
+二十二 登陆界面布局
+alt+shift+2 分屏
+
+二十三 网站banner布局
+1.问题：子元素加入了margin如何和父元素的边界重合？
+解决：给父元素加入：padding，border，overflow,position
+
+
+二十四边框布局和导航布局
+
+1.盒子阴影box-shadow
+值：	水平位置（必须写）
+	垂直位置 （必须写）
+	阴影模糊程度 
+	尺寸 （很少用）
+	阴影颜色
+2.********补充
+	before
+	after
+
+二十五 css雪碧图 精灵图
+好处：不用加载那么多图片，加载一张就可以
+
+二十六 css企业开发规范
+
+1.命名空间规范
+	a.布局容器：以g为命名，例如：（大盒子）.g-wrap,.g-header,.g-content,.g-container
+	b.工具：以u为命名空间，表示不耦合业务逻辑的，可复用的工具，例如：u-clearfix,u-ellipsis
+	c.为选择器添加状态前缀，.is-show
+2.css书写顺序
+	位置属性(position,top,right,z-index,display,float)
+	大小(width,height,padding,margin)
+	文字系列(font,line-height,letter-spacing,color,text-align)
+	背景(background,border)
+	其他(animation,transition)
+3.中横线(-)
+4.不要随意使用id（配合js）
+5.注释：
+	单行注释/* */
+     多行注释/**
+             *
+             *
+             *
+             */
+
+二十七 网页图标和html判断IE版本
+1.网页图标
+	<link rel="stylesheet" type="text/css" href="">
+	title可能出现乱码：解决办法
+	<meta charset="utf-8">
+2.html判断IE版本
+！：非IE：<!--[if !IE]>除了IE外都会执行<!if[endif]-->
+lte:小于或等于  <!--[if lte IE 6]>  <!if[endif]-->
+lt:小于  <!--[if lt IE 9]>  <!if[endif]-->
+gte:大于或等于  <!--[if gte IE 9]>  <!if[endif]-->
+gt:大于  <!--[if gt IE 9]>  <!if[endif]-->
+
+
+
+
+
+
+
+

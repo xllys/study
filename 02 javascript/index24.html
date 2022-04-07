@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//数组是对象，存储在堆内存中
+	/*
+	var arr=new Array('a','b','c','d');
+	var brr=new Array('a','b','c','d');
+	//如果引用不相同也是false
+	console.log(arr==brr);
+	*/
+
+	/*
+	var arr=new Array('a','b','c','d');
+	//如果引用相同true
+	var brr=arr;
+	console.log(arr==brr);
+	console.log(['a','b','c','d']==['a','b','c','d']);
+	*/
+
+// var arr=['a','b','c','d'];
+// console.log(arr);
+
+/*
+var arr=['张一','张二','张三','张四'];
+var brr=new Array('张一','张二','张三','张四');
+console.log(arr.length);
+console.log(brr.length);
+
+var arr=[3]; 
+var brr=new Array(3);
+var crr=new Array('a');
+console.log(arr.length);    //1
+console.log(brr.length);    //3
+console.log(crr.length);    //1
+*/
+
+var arrName=['张一','张二','张三','张四'];
+var arrAge=[18,20,22,23];
+var arrSex=['男','女','男','女'];
+function selectAge(cName){
+	var len=arrName.length;
+	for(var i=0;i<len;i++){
+		if(arrName[i]==cName){
+			console.log(arrAge[i]);
+			console.log(arrSex[i]);
+		}
+	}
+}
+selectAge(arrName[1]);
+</script>
+</body>
+</html>

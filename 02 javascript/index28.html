@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//1.
+// var arr=['a','b','c'];
+// // for(var i=0;i<arr.length;i++){
+// // 	console.log(arr[i],i);
+// // }
+// arr.forEach(function(item,index){
+// 	console.log(item,index);
+// })
+
+//2.
+// var  arr=['a','b','c'];
+// // var brr[];
+// // for(var i=0;i<arr.length;i++){
+// // 	brr.push(arr[i]+'0');
+// // }
+// // console.log(brr);
+// var brr=arr.map(function(item,index){
+// 	return item+'0';
+// })
+// console.log(brr);
+
+//3.
+// var arr=[19,18,20,22,25,33,26];
+// // var brr=[];
+// // for(var i=0;i<arr.length;i++){
+// // 	if(arr[i]>20){
+// // 		brr.push(arr[i]);
+// // 	}
+// // }
+// // console.log(brr);
+// var brr=arr.filter(function(item,index) {
+// 	return item>20;
+// })
+// console.log(brr);
+
+//4.
+// var arr=[19,18,20,22,25,33,26];
+// var bol=arr.every(function(item,index) {
+// 	return item>=18;
+// })
+// console.log(bol);
+
+//5.
+var arr=[19,18,20,22,25,33,26];
+var bol=arr.some(function(item,index) {
+	return item>22;
+})
+console.log(bol);
+</script>
+</body>
+</html>

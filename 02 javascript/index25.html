@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>今天玩什么游戏？</title>
+	<style type="text/css" >
+		span{
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+			padding: 50px;
+			border: 1px solid #ccc;
+			border-radius: 12px;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<span id="smoke"></span>
+</div>
+
+<div>
+	<input type="button" value="开始" id="start" >
+	<input type="button" value="停止" id="stop" >
+</div>
+<script type="text/javascript">
+(function(){
+	//获取开始按钮
+	var start=document.getElementById('start'),
+		stop=document.getElementById('stop'),
+		smoke=document.getElementById('smoke'),
+	//玩什么游戏？—一系列的值
+		arr=['王者荣耀','英雄联盟','连连看','斗地主','吃鸡'];
+	//把js的数据放入到盒子里面
+	smoke.innerText=arr[0];
+	//切换初始值
+	var index=0;
+	//定时器
+	var timer=null;
+	//开始按钮添加事件
+	start.onclick=function(){
+		//禁用按钮
+		start.disabled=true;
+		//运行定时器
+		timer=setInterval(function(){
+			//切换的++
+			index++;
+			//判断数据值溢出
+			if(index>4){
+				index=0;
+			}
+			//数据赋值
+			smoke.innerText=arr[index];
+		},50);
+	}
+	//停止按钮添加事件
+    stop.onclick=function(){
+    	//清除定时器
+    	clearInterval(timer);
+    	//不禁用按钮
+    	start.disabled=false;
+    	
+
+    }
+
+})();
+</script>
+</body>
+</html>

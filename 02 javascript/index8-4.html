@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+
+// var num=10;
+// //1.先把num的值 赋值 给sum，所以这个时候sum就是10
+// //2.然后num再+1 ，变成11
+// var sum= num++;  
+// console.log(num,sum); // 11 10
+
+// var num=10;
+// //1.先num自身+1，结果11
+// //2.然后把num的值 赋值 给sum，sum=1
+// var sum= ++num;  
+// console.log(num,sum); // 11 11
+
+
+// var num=10;
+// //1.sum=10+10
+// //2.num自身+1，结果11
+// var sum= num++ + 10;  
+// console.log(num,sum); // 11 20
+
+
+// var num=10;
+// //1.先num自身+1，结果11
+// //2.然后sum=11+10=21
+// var sum= ++num + 10;
+// console.log(num,sum);  //11 21
+
+
+// var num=1;
+// //1.num=1+1=2  2 + ++num
+// //2.num=2+1=3  2+3=5
+// var sum=++num + ++num;
+// console.log(num,sum);  //3 5
+
+// var num=1;
+// //1. 1+num++ ,但是内存中num已经是2了
+// //2. sum=1+2
+// var sum=num++ + num++;
+// console.log(num,sum);  //3 3
+
+// var num=1;
+// //1.num=1+1=2 2+num++
+// //2.sum=2+2=4  num=2+1=3
+// var sum=++num + num++;
+// console.log(num,sum);  //3 4
+
+
+var num=1;
+//1.num=1+1=2 2 + ++num +num++ + ++num
+//2.num=2+1=3 2+3+num++ + ++num
+//3.sum=5+3+ ++num  num内存已是4
+//4.sum=5+3+5=13  
+var sum=++num + ++num + num++ + ++num;
+console.log(num,sum); //5 13
+
+</script>
+
+</body>
+</html>

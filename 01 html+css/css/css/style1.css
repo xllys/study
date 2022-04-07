@@ -1,0 +1,154 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+input{
+	outline: none;
+}
+.r{
+	float: right;
+}
+.l{
+	float: left;
+}
+.no-js{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	background: #000;
+	color: #fff;
+}
+.g-container{
+/*	width: 100%;
+	height: 100%;*/
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	/*background: url('../d.jpg') no-repeat;*/
+	background: #62E1E2 ;
+	background-size: cover;
+}
+.login{
+	position: fixed;
+	top: 50%;
+	right:10%;
+	margin-top: -190px;
+	width: 450px;
+	height: 380px;
+}
+.login-content{
+	width: 450px;
+	height: 380px;
+	padding: 10px;
+	background: #fff;
+	border-radius: 10px;
+}
+.login-point{
+	width: 100px;
+	height: 22px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 22px;
+	text-align: center;
+	background: #62E1E2;
+}
+.login-triangle{
+	width: 0;
+	height: 0;
+	border: 11px solid;
+	border-color: transparent transparent transparent #62E1E2;
+}
+/*.login-icon {
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+
+}*/
+.login-icon > img{
+	position: absolute;
+	height: 22px;
+	padding-left: 1px;
+
+
+}
+.login-all{
+	width: 80%;
+	margin: 50px auto 0px;
+}
+.login-option{
+	width: 100%;
+	height: 40px;
+	margin-bottom: 40px;
+	border: 1px solid #62E1E2;
+	border-radius: 20px;
+	line-height: 40px;
+
+}
+.login-option > li{
+	float: left;
+	width: 50%;
+	text-align: center;
+	font-size: 19px;
+	font-weight: bold;
+	color: #4f4f4f;
+	cursor: pointer;
+}
+.login-option > li.active{
+	color: #fff;
+	background: #57cdd6;
+	border-radius: 20px;
+}
+.login-form{
+	position: relative;
+	width: 100%;
+	padding: 3px;
+	margin-top: 10px;
+	border: 1px solid #62E1E2;
+}
+.login-form >img{
+	position: absolute;
+	margin-top: 7.5px;
+	height: 20px;
+	padding-left: 5px;
+
+}
+.login-form >input{
+	width: 80%;
+	height: 35px;
+	padding-left: 30px;
+	border: 0;
+
+}
+.login-password{
+	padding: 8px 0;
+}
+.login-password >a{
+	font-size: 12px;
+	color: #ccc;
+
+}
+.login-password >span{
+	font-size: 12px;
+	color: #ccc;
+
+}
+.login-btn > input{
+	width: 100%;
+	height: 35px;
+	margin-top: 20px;
+	font-size: 19px;
+	color: #fff;
+	background: #64e5e6;
+	border: 0;
+}

@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.w a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.g-zong{
+    width: 600px;
+
+}
+.g-header{
+    margin-left: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+}
+.g-content{
+    width: 800px;
+
+}
+.g-content:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.g-1{
+    float: left;
+}
+.g-1 img{
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.g-2{
+    width: 500px;
+    float: left;
+    position: relative;
+    top: 10px;
+
+}
+.t{
+    font-size: 14px;
+}
+.r{
+    color: red;
+}
+.w{
+    margin-top: 10px;
+    font-size: 14px;
+}
+.h {
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.img-2{
+    margin-top: 10px;
+    height: 25px;
+}
+.h-1{
+    position: relative;
+    top: -7px;
+
+}

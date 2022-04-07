@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+
+		}
+		div,h1{
+			background: red;
+		}
+		#options{
+			background: yellow;
+		}
+		#lis{
+			background: blue;
+		}
+		.lis{
+			background: blue;
+		}
+		.o-ul li{
+			background: blue;
+		}
+		.o-div{
+			background: blue;
+		}
+		.x-div+div{
+			background: purple;
+		}
+		ul li+li{
+			background: yellow;
+		}
+	</style>
+
+</head>
+<body>
+	<div class='o-div'>
+		00000
+		<div>AAAAA
+			<div>
+				BBBBB
+			</div>
+		</div>
+	</div>
+	<div class='x-div'>11111</div>
+	<div>22222</div>
+
+	<p>3</p>
+	<p>33</p>
+	<p id='options'>333</p>
+	<p>3333</p>
+	<p>33333</p>
+
+	<h1>44444</h1>
+	<span>55555</span>
+
+	<ul class='o-ul'>
+		<li>AA</li>
+		<li>BB</li>
+		<li>CC</li>
+		<li id='lis'>DD</li>
+		<li class='lis'>EE</li>
+	</ul>
+
+
+	<ul>
+		<li>aa</li>
+		<li>bb</li>
+		<li>cc</li>
+		<li id='lis'>dd</li>
+		<li class='lis'>ee</li>
+	</ul>
+
+</body>
+</html>

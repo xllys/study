@@ -1,0 +1,84 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+input{
+	outline: none;
+}
+ul{
+	list-style: none;
+}
+/*.banner-container{
+	padding: 150px 0 ;
+	text-align: center;
+	background: url('../h.jpg') no-repeat;
+	background-size: cover;
+	color: #fff;
+}*/
+.banner-container{
+/*	border-top: 1px solid #ccc;*/
+	overflow: hidden;
+	height: 400px;
+	text-align: center;
+	background: url('../h.jpg') no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+.banner-container h2{
+	margin-top:70px ;
+	font-size: 35px;
+}
+.banner-container p{
+	padding: 30px 0;
+}
+.banner-container a{
+	display: inline-block;
+	color:#fff;
+	border: 1px solid #fff;
+	width: 158px;
+	height: 35px;
+	line-height: 35px;
+
+}
+.banner-container a.active{
+	background: blue;
+	border: 1px solid blue;
+}
+.banner-wrap{
+	width: 1180px;
+	margin: 0 auto;
+}
+.banner-list{
+	margin-top: -100px;
+}
+.banner-list li{
+	float: left;
+	width: 280px;
+	height: 300px;
+	padding: 30px 0;
+	text-align: left;
+	background: #fff;
+
+}
+.banner-list li + li{
+	margin-left: 20px;
+}
+.banner-list li h3{
+	font-weight: 300px;
+	margin-left: 30px;
+	font-size: 24px;
+	color: #333;
+	line-height: 26px;
+
+}
+.banner-list li p{
+	margin-left: 30px;
+	font-size: 14px;
+	color: #666;
+	line-height: 26px;
+
+
+}

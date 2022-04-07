@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<!-- <input type="button" value="停止" id='btn'> -->
+<script type="text/javascript">
+//每隔3000毫秒(3s)，在页面中弹出一个1
+/*1.
+setInterval(function(){
+	alert(1);
+},3000);
+*/
+
+/*2.
+function fun(){
+	document.write(1);
+}
+// fun();
+// console.log(fun);
+setInterval(fun,1000);
+*/
+
+// setTimeout(function(){
+// 	document.write('你好');
+// },1000);
+
+
+// var timer = setInterval(function(){
+// 	console.log('你好');
+// },1000);
+// btn.onclick=function(){
+// 	clearInterval(timer);
+// }
+
+
+/*
+//b====>a====>c
+
+setTimeout(function(){
+	console.log('a');
+},1000);
+
+console.log('b');
+
+setTimeout(function(){
+	console.log('c');
+},1000);
+*/
+
+//列1
+//执行结果 5次 i=5
+// for (var i=0;i<5;i++){
+// 	setTimeout(function(){
+// 		console.log(i);
+// 	},1000);
+// }
+
+//列2
+//几秒输出几   -----执行3次，每次结果3，每次隔1秒
+for (var i=0;i<3;i++){
+	setTimeout(function(){
+		console.log(i);
+	},1000*i,console.log('i===>',i));
+}
+</script>
+</body>
+</html>

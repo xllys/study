@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<!-- <script type="text/javascript">
+
+console.log(location.href);
+</script> -->
+
+
+<!-- <a href="https://www.baidu.com/?tn=38036936_hao_pg">跳转</a>
+<input type="button" value="跳转" id='btn'> -->
+<!-- <script type="text/javascript">
+btn.onclick=function(){
+	location.href="https://www.taobao.com/";
+}
+</script> -->
+
+<input type="text"  id='userName' />
+<input type="password" id='userPwd' />
+<input type="button" value="登录" id='login'>
+<script type="text/javascript">
+//用户名：admin
+//密码：admin
+//当点击登录的时候（登录成功），跳转home.html
+//如果用户名和密码不对，提示：输入有误
+login.onclick=function(){
+	var uName=userName.value;
+	var uPwd=userPwd.value;
+	if(uName=='admin'&&uPwd=='admin'){
+		//location.href='home.html';
+		window.open('home.html','_blank');
+	}else{
+		alert('用户名和密码有误');
+	}
+
+}
+</script>
+
+</body>
+</html>
