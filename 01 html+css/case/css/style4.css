@@ -53,34 +53,35 @@ ul li{
     color: rgb(73, 71, 71);
     border: 1px solid #ccc;
     border-radius: 50px;
+    cursor: pointer;
 }
 .main_ul{
     display: inline-block;
     display: flex;
     height: 30px;
     padding: 7px 10px;
+    text-align: center;
 }
 .main_li{
-    padding: 0 16px;
+    width: 20%;
 }
 .main_li_name{
-    padding: 0 10px;
+    width: 20%;
 
 }
 .main_li_name:last-child{
-    padding: 0 25px;
     color: rgb(170, 168, 168);
 }
 .main_li_name_t{
-    padding: 0 10px;
+    width: 20%;
     color: rgb(170, 168, 168);
 }
 .main_li_num{
-    padding: 0 13px;
+    width: 20%;
 }
 
 .main_li_na{
-    padding: 0 15px;
+    width: 20%;
     color: rgb(170, 168, 168);
 }
 .main_img{
