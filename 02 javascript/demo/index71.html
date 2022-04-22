@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//'use strict'   //全局方式
+// function fun1(){
+//     'use strict' //局部方式
+// }
+// function fun2(){
+
+// }
+
+//'use strict'
+// var str1='123';
+// window.str2='456';
+// str3='789';
+// console.log(str1,str2,str3);
+// function fun1(){
+//     var str='123';
+//     console.log(str);
+// }
+// fun1();
+
+// function fun2(){
+//     'use strict'
+//     this.user='zhangsan';
+//     //console.log(this);
+// }
+// fun2();
+
+// function fun3(a,a,b){
+//     'use strict'
+
+// }
+// fun3();
+
+function fun4(){
+    'use strict'
+    arguments.length =20;
+    console.log(arguments);
+
+}
+fun4(1,2,2,3,4);
+
+</script>   
+</body>
+</html>

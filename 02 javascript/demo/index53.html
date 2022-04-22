@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .wrap{
+        width: 600px;
+        margin: 0 auto;
+    }
+    .attrs p{
+        padding: 20px 0;
+    }
+    .attrs p span{
+        display: inline-block;
+        padding: 3px 6px;
+        margin: 0 5px;
+        border: 3px solid #ccc;
+    }
+    .attrs p span.on{
+        border-color: orange;
+    }
+    .price{
+        padding: 20px 0;
+    }
+    .price strong{
+        font-size: 21px;
+        color: orange;
+    }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="attrs" id="attrs">
+        <p>
+            尺码
+            <span class="on">M</span>
+            <span>L</span>
+            <span>XL</span>
+        </p>
+        <P>
+            颜色
+            <span class="on">黑</span>
+            <span>白</span>
+            <span>灰</span>
+        </P>
+        <p id="setMeal">
+            套餐
+            <span class="on">套餐一：送袜子</span>
+            <span>套餐二：送手套</span>
+            <span>套餐三：送帽子</span>
+        </p>
+    </div>
+    <div class="price">
+        价格 <strong id="priceTxt">￥59.00</strong>
+    </div>
+</div>
+<script>
+var attrs=document.getElementById('attrs');
+var oSpan=attrs.getElementsByTagName('span');
+var oSpanLen=oSpan.length;
+for(var i=0;i<oSpanLen;i++){
+    oSpan[i].onclick=function(){
+        //先把当前点击的某一行的span的class清空
+        var siblings=this.parentNode.children;
+        var siblingsLen=siblings.length;
+        for(var j=0;j<siblingsLen;j++){
+            siblings[j].className='';
+        }
+        //给点击当前加入class为on
+        this.className='on';
+        if(this.parentNode.id=='setMeal'){
+            fTotalPrice();
+        }
+    
+    }
+}
+function fTotalPrice(){
+    var setMeal=document.getElementById('setMeal');
+    var setMealSpan=setMeal.getElementsByTagName('span');
+    var setMealSpanLen=setMealSpan.length;
+    var price=0;
+    for(var i=0;i<setMealSpanLen;i++){
+        if(setMealSpan[i].className=='on'){
+            switch(i){
+                case 0:
+                    price=59;
+                break;
+                case 1:
+                    price=69;
+                break;
+                case 2: 
+                    price=79;
+                break;
+            }
+        }
+    }
+    priceTxt.innerHTML='￥'+price.toFixed(2);
+}
+</script>
+</body>
+</html>

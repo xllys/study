@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <script>
+var str1='123';  //全局变量   全局作用域
+window.str2='123';
+str3='123';
+console.log(str1,str2,str3,window);
+
+//全局作用域
+function fun(){ //局部作用域
+    var str4='123';
+    console.log(str4);
+}
+//全局作用域
+fun();
+</script> -->
+
+<!-- <script>
+var str1='123';
+function fun(){
+    var str1='123455';
+    console.log(str1);
+}
+fun();
+</script> -->
+
+<script>
+//全局作用域--->1
+var str='a'
+function fun(){
+    //局部作用域--->2
+    var str='b'
+    return function(){
+        //局部作用域--->3
+        var str='c'
+        console.log(str);
+    }
+}
+fun()();
+
+</script>
+</body>
+</html>

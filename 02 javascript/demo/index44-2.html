@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .main{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 100px;
+        background: pink;
+    }
+    </style>
+</head>
+<body>
+<div class="main" id="main"></div> 
+<script>
+var main=document.getElementById('main');
+document.onkeydown=function(e){
+    //console.log(e.keyCode);
+    //左37 上38 右39 下40
+    switch(e.keyCode){
+        case 37:
+            main.style.left=main.offsetLeft-10+'px';
+        break;
+        case 38:
+            main.style.top=main.offsetTop-10+'px';
+        break;
+        case 39:
+            main.style.left=main.offsetLeft+10+'px';
+        break;
+        case 40:
+            main.style.top=main.offsetTop+10+'px';
+        break;
+        
+    }
+}
+</script>
+</body>
+</html>

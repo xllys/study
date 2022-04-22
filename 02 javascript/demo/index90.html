@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function Fun(){
+    //不共享
+    this.run=function(){
+        return 111;
+    }
+
+}
+//共享
+// Fun.prototype.person=function(){
+//     return 2222;
+// }
+Fun.prototype={
+    person:function(){
+        return 2222;
+    }
+    
+}
+var obj1=new Fun();
+var obj2=new Fun();
+console.log(obj1.run(),obj2.run());
+console.log(obj1.run===obj2.run);
+console.log(obj1.person===obj2.person);
+
+</script>
+</body>
+</html>

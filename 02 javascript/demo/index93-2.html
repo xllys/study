@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//深拷贝1
+var o={
+    a:1,
+    b:{
+        a:'你好',
+    }
+};
+var m=JSON.parse(JSON.stringify(o));
+console.log(o,m);
+m.b.a='不好了';
+console.log(o,m);
+
+//深拷贝2
+var obj={
+    a:1,
+    b:{
+        a:'你好',
+    }
+};
+function fun(obj){
+    var m1={};
+    if(typeof obj=='object'){
+        for(var k in obj){
+            if(obj.hasOwnProperty(k)){
+                if(typeof obj[k]=='object'){
+                    m1[k]=fun(obj[k]);
+                }else{
+                    m1[k]=obj[k];
+                }
+            }
+        }
+    }
+    return m1;
+}
+var createObj=fun(obj);
+console.log(createObj.b);
+console.log(obj.b);
+createObj.b.a='buhao';
+console.log(createObj.b);
+console.log(obj.b);
+</script>
+</body>
+</html>

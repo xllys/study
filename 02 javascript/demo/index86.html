@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var x=1;
+var obj={
+    x:2,
+    run:function(val){
+        return this.x+val;
+    },
+};
+console.log(obj.run('你好'));
+var f=obj.run;
+console.log(f('不好'));
+console.log(f.call(obj,'大家好'));
+console.log(f.apply(obj,['好不好']));
+console.log(f.bind(obj,'大家好')());
+
+console.log(Math.max(...[3,6,8,99,55]));
+
+console.log(Math.max.apply(null,[3,6,8,99,55]));
+
+</script>
+</body>
+</html>

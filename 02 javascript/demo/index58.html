@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--     2     <input type="text" id="txt">
+<ul id="uls"></ul>
+<script>
+var txt=document.getElementById('txt'),
+    uls=document.getElementById('uls'),
+    reg=/菜B|尼玛|大爷/g;
+txt.onkeyup=function(e){
+    //input的value值
+    var val=this.value;
+    //alert(e.keyCode);
+    //判断键值是否是13（13是回车）
+    if(e.keyCode==13){
+        //如果内容与正则匹配，就返回true
+        if(reg.test(val)){
+            //进行替换操作
+            val=val.replace(reg,'*');
+        }
+
+        //新建一个li节点
+        var lis=document.createElement('li');
+        //往li节点内添加文本内容
+        lis.innerHTML=val;
+        //最后把新建的li节点放入到ul里面
+        uls.appendChild(lis);
+        //input的value值弄成空
+        this.value='';
+    }
+}
+</script> -->
+
+
+<!--   1     <script>
+var reg1=/com|cn|cc|net/;
+var str1='com';
+console.log(reg1.test(str1));
+
+var reg2=/[a-z]/i;
+var str2='A';
+console.log(reg2.test(str2));
+
+var reg3=new RegExp('[a-z]','i');
+var str3='A';
+console.log(reg3.test(str3),'这是构造函数形式');
+
+var reg4=/你/g;
+var str4='你好呀，你好吧，你好啊';
+console.log(str4.replace(reg4,'*'));
+</script> -->
+
+<script>
+var reg=/a/;
+var str='abacad';
+console.log(reg.exec(str));
+console.log(str.match(reg));
+</script>
+</body>
+</html>

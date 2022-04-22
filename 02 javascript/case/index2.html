@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .main{
+        margin: 80px 200px;
+        display: flex;  
+    }
+    .s-img{
+        position: relative;
+
+    }
+    .s-img img{
+        width: 400px;
+        height: 400px;
+    }
+    .s-img span{
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background: white;
+        opacity: .5;
+
+    }
+    .p-img{
+        position: relative;
+        display: none;
+        width: 400px;
+        height: 400px;
+        margin-left: 20px;
+        overflow: hidden;
+    }
+    .p-img img{
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        top: 0;
+        left: 0;
+    }
+
+    </style>
+</head>
+<body>
+<div class="main" id="main">
+    <div class="s-img u-l" id="sImg">
+        <img src="img/400.jpg" alt="">
+        <span class="lens" id="lens"></span>
+        
+    </div>
+    <div class="p-img u-l" id="pImg">
+        <img src="img/800.jpg"  id="picImg" alt="">
+    </div>
+</div>
+<script src="js/script2.js"></script>
+</body>
+</html>

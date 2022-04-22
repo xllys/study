@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="main">11111</div>
+<script>
+var main=document.getElementById('main');
+// main.onclick=function(){
+//     alert(1);
+// }
+// main.onclick=null;
+function fn(){
+    alert('2级');
+}
+main.addEventListener('click',fn,false)
+main.removeEventListener('click',fn,false)
+</script>
+</body>
+</html>

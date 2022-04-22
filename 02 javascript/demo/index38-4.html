@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+<!-- <div class="container" id="main" data-title="123"></div>
+<img src="images/2.jpg" id="oImg">
+<script>
+var oImg=document.getElementById('oImg'),
+    main=document.getElementById('main');
+console.log(oImg.getAttribute('src'));
+console.log(main.getAttribute('class'));
+</script>   -->
+
+
+<!-- <img src="" id="oImg">
+<script>
+var oImg=document.getElementById('oImg');
+// oImg.setAttribute('src','3.jpg');
+var arrImg=['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg'];
+var index=0;
+oImg.setAttribute('src',arrImg[0]);
+setInterval(function(){
+    index++;
+    if(index>arrImg.length-1){
+        index=0;
+    }
+    oImg.setAttribute('src',arrImg[index]);
+
+},500)
+</script>   -->
+
+
+<div class="container" id="main"></div>
+<script>
+var main=document.getElementById('main');
+main.removeAttribute('class');
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//构造函数
+function Fun(){
+    this.name='张三';  //this在obj里
+    this.run=function(){
+        return 1111;
+    }
+}
+var obj1=new Fun(); //实例化
+var obj2=new Fun();
+console.log(obj1.name);
+console.log(obj1.run());
+
+console.log(obj1.run==obj2.run);
+
+</script>
+</body>
+</html>

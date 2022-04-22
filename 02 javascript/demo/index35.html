@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .code{
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+<div class="g-login">
+    <div>
+        <input type="text" id="txt">
+        <span id="code" class="code"></span>
+    </div>
+    <div>
+        <input type="button" value="登录" id="btn">
+    </div>
+</div>
+<script>
+//1.点击验证码可以切换
+//2.验证验证码是否正确
+var code=document.getElementById('code'),
+    txt=document.getElementById('txt'),
+    btn=document.getElementById('btn');
+//生成验证码的函数
+function fRandom(codeLen){
+    var str='abcdef1234567890';
+    var strCode='';
+    for(var i=0;i<codeLen;i++){
+        var n=Math.floor(Math.random()*str.length);
+        strCode+=str[n];
+    }
+    // console.log(strCode);
+    //给验证码盒子内容赋值，让其显示这个生成的验证码
+    code.innerText=strCode;
+}
+fRandom(4);
+//点击验证码
+code.onclick=function(){
+    fRandom(4);
+}
+//点击登录判断
+btn.onclick=function(){
+    if(txt.value===code.innerText){
+        location.href='http://www.xuexiluxian.cn/';
+    }else{
+        alert('验证码不正确');
+    }
+}
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <div>
+        <div id="main"></div>
+    </div>
+</div>
+<script>
+//把最终的结果放在数组中
+var arrDom=[];
+//递归函数
+function fun(dom){
+    //父元素
+    var node=dom.parentNode;
+    //如果父元素存在===>终止条件
+    if(node){
+        arrDom.push(node);
+        fun(node);
+    }
+    
+}
+fun(document.getElementById('main'));
+console.log(arrDom);
+
+</script>
+</body>
+</html>

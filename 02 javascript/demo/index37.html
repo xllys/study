@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .count-down{
+        width: 190px;
+        height: 100%;
+        color: aliceblue;
+        background: url('images/jd.png');
+        background-size: 100%;
+        overflow: hidden;
+    }
+    .count-down-title{
+        margin-top: 31px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .count-down-desc{
+        margin-top: 90px;
+        font-size: 14px;
+        text-align: center;
+    }
+    .count-down-desc strong{
+        font-size: 20px;
+        margin-right: 2px;
+    }
+    .count-down-main{
+        margin: 10px auto 30px;
+        width: 130px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .count-down-main span{
+        position: relative;
+        float: left;
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        text-align: center;
+        background: #000;
+
+    }
+    .count-down-main span:after{
+        content: ':';
+        position: absolute;
+        top: 0;
+        right: -20px;
+        width: 20px;
+        height: 100%;
+
+    }
+    .count-down-main .last:after{
+        content: '';
+    }
+    .count-down-main .last{
+        margin-right: 0;
+    }
+    </style>
+</head>
+
+<body>
+<div class="count-down">
+    <div class="count-down-title">京东秒杀</div>
+    <div>
+        <div class="count-down-desc">
+            <strong>12:00</strong>
+            点场 距结束
+        </div>
+        <div class="count-down-main">
+            <span id="hour">00</span>
+            <span id="minute">00</span>
+            <span class="last" id="second">00</span>
+        </div>
+    </div>
+</div>
+<script>
+var hour=document.getElementById('hour'),
+    minute=document.getElementById('minute'),
+    second=document.getElementById('second');
+//什么时间停止秒杀===>停止时间
+var date=new Date('2022-4-9 00:00:00');
+//执行的函数
+function fCountDown(){
+    // hour.innerText='05';
+    var nowTime=new Date();
+    //目标停止时间-当前时间，算出来，差额时间
+    var times=(date-nowTime)/1000;
+    //获取差额的小时
+    var h=parseInt(times/60/60%24);
+    h=h<10?'0'+h:h;
+    hour.innerText=h;
+    //获取差额的分钟
+    var m=parseInt(times/60%60);
+    m=m<10?'0'+m:m;
+    minute.innerText=m;
+    //获取差额的秒数
+    var s=parseInt(times%60);
+    s=s<10?'0'+s:s;
+    second.innerText=s;
+}
+//一开始一刷新页面就执行一次
+fCountDown();
+//每过一秒执行一次
+setInterval(fCountDown,1000);
+
+
+</script>
+</body>
+
+</html>

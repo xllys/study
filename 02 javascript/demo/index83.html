@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*最终返回一个对象
+{
+    a:3,
+    b:2,
+    c:2,
+    m:1,
+}*/
+var str='abccbaam';
+function fUnique(str){
+    //创建一个对象
+    var obj={};
+    for(var i=0;i<str.length;i++){
+        var key=str[i];
+        if(!obj[key]){
+            //如果obj对象没有a，添加一个a，并且赋值为1
+            obj[key]=1;
+        }else{
+
+            //如果obj对象有对应的key了，就让值+1
+            obj[key]+=1;
+        }
+    }
+    //返回最终结果的对象
+    return obj;
+}
+console.log(fUnique(str));
+</script>
+</body>
+</html>

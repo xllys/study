@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div id="main">
+</div>
+
+<!--<ul id="uls">
+    <li>0</li>
+    <li>1</li>
+</ul>
+<script>
+var main=document.getElementById('main');
+var newDiv=document.createElement('div');
+main.appendChild(newDiv);
+var uls=document.getElementById('uls');
+var newLi=document.createElement('li');
+newLi.innerText='你好';
+// uls.appendChild(newLi);
+var li0=document.getElementsByTagName('li')[0];
+uls.insertBefore(newLi,li0);
+</script>    -->
+
+<!-- <input type="button" value="添加li" id="add">
+<ul id="uls"></ul>
+<script>
+var add=document.getElementById('add'),
+    uls=document.getElementById('uls');
+add.onclick=function(){
+    //创建li节点
+    var newLi=document.createElement('li');
+    var liLen=document.getElementsByTagName('li').length;
+    newLi.innerText=liLen;
+    //添加节点--追加
+    //uls.appendChild(newLi);
+    //添加节点--前置
+    //uls.insertBefore(newLi,document.getElementsByTagName('li')[0]);
+}
+</script> -->
+
+<ul id="uls">
+    <li>
+        111111
+        <a href="javascript:;">删除</a>
+    </li>
+    <li>
+        222222
+        <a href="javascript:;">删除</a>
+    </li>
+    <li>
+        333333
+        <a href="javascript:;">删除</a>
+    </li>
+    <li>
+        444444
+        <a href="javascript:;">删除</a>
+    </li>
+    <li>
+        555555
+        <a href="javascript:;">删除</a>
+    </li>
+    <li>
+        666666
+        <a href="javascript:;">删除</a>
+    </li>
+</ul>
+<script>
+var uls=document.getElementById('uls');
+var oA=document.getElementsByTagName('a');
+var oALen=oA.length;
+for(var i=0;i<oALen;i++){
+    oA[i].onclick=function(){
+        uls.removeChild(this.parentNode);
+        // this.parentNode.parentNode.removeChild(this.parentNode);
+        
+    }
+}
+
+
+/*1.
+//获取父节点
+var main=document.getElementById('main');
+//创建子节点
+var newH1=document.createElement('h1');
+//给子节点赋值
+newH1.innerText=123;
+//把子节点添加到父节点里面
+main.appendChild(newH1);
+*/
+var main=document.getElementById('main');
+main.innerHTML='<h1>123</h1>'
+
+</script>
+</body>
+</html>

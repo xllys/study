@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+console.log(Math.PI);
+//取一组数的最大值
+console.log(Math.max(6,88,99,55,3));
+//取一组数的最小值
+console.log(Math.min(6,88,99,55,3));
+//四舍五入
+console.log(Math.round(3.1415926) );
+//返回数的绝对值
+console.log(Math.abs(-5) );
+//返回数的平方根
+console.log(Math.sqrt(64) );
+//向下取整---3,小数舍去，返回整数
+console.log(Math.floor(3.14) );
+//向上取整---4，小数舍去，返回整数+1
+console.log(Math.ceil(3.14)  );
+//返回随机数
+console.log(Math.random() );
+
+function fMax(min,max){
+    return Math.floor(Math.random()*(max - min)+min);
+}
+console.log(fMax(5,9));
+
+function fMin(min,max){
+    return Math.floor(Math.random()*(max - min+1)+min);
+}
+console.log(fMin(5,9));
+
+</script>  
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="button" value="添加li" id="btn">
+<ul id="uls">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+
+var btn=document.getElementById('btn');
+var uls=document.getElementById('uls');
+btn.onclick=function(){
+    var newLi=document.createElement('li');
+    newLi.innerHTML='后添加的';
+    uls.appendChild(newLi);
+}
+uls.onclick=function(e){
+    // console.log(e.target.nodeName);
+    if(e.target.nodeName=='LI'){
+        e.target.style.background='blue';
+    }
+}
+/*
+var lis=document.getElementsByTagName('li');
+var liLen=lis.length;
+for(var i=0;i<liLen;i++){
+    lis[i].onclick=function(){
+        this.style.background='red';
+    }
+}
+var btn=document.getElementById('btn');
+var uls=document.getElementById('uls');
+btn.onclick=function(){
+    var newLi=document.createElement('li');
+    newLi.innerHTML='后添加的';
+    uls.appendChild(newLi);
+
+    var lis=document.getElementsByTagName('li');
+    var liLen=lis.length;
+    for(var i=0;i<liLen;i++){
+    lis[i].onclick=function(){
+        this.style.background='red';
+    }
+}
+}
+*/
+</script>
+</body>
+</html>

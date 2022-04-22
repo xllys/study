@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var reg1=/abc{3}/;
+var str1='abcabcabc';  //'abccc'
+console.log(reg1.test(str1));
+
+var reg2=/(abc){3}/;
+var str2='abcabcabc';  //'abccc'
+console.log(reg2.test(str2));
+
+var str='2022-04-13';
+var reg=/^(\d{4})-(\d{2})-(\d{2})$/;
+//console.log(str.replace(reg,'$2'));
+reg.test(str);
+console.log(RegExp.$1,RegExp.$2,RegExp.$3);
+</script>
+</body>
+</html>

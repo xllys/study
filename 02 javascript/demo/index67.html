@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//以数字或字母开头，中间可以有数字字母下划线-
+//@后面可以有数字和字母{2,4}
+//.后缀
+var reg=/^[0-9]|[a-z](\w|\-)+\@([0-9a-zA-Z]{2,4})\.([0-9a-zA-Z]{2,4})$/;
+var str='412_-8206@qq.com';
+console.log(reg.test(str));
+</script>
+</body>
+</html>

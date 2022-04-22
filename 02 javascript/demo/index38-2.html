@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul id="uls">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+<ul>
+    <li class="lis">1</li>
+    <li class="lis">2</li>
+    <li class="lis">3</li>
+    <li class="lis">4</li>
+</ul>
+<div id="main" class="container">我是主要部分</div>
+<script>
+    // console.log(document.getElementById('main'));
+    // //        文档 的 获取   
+    // var lis=document.getElementsByTagName('li');
+    // var len=lis.length;
+    // console.log(lis);
+    // console.log(lis.length);
+    // console.log(lis[0]);
+    // for(var i=0;i<len;i++){
+    //     lis[i].style.background='yellow';
+    // }
+// //获取的ul
+// var uls =document.getElementById('uls');
+// //对应id为ul的下所有li
+// var lis=uls.getElementsByTagName('li'); 
+// var len=lis.length;
+// for(var i=0;i<len;i++){
+//     lis[i].style.background='yellow';
+// }  
+
+var lis=document.getElementsByClassName('lis');
+console.log(lis,lis.length);
+console.log(document.querySelector('li'));
+console.log(document.querySelectorAll('li'));
+console.log(document.querySelectorAll('#main')[0]);
+console.log(document.querySelectorAll('.container')[0]);
+console.log(document.querySelectorAll('ul li'));
+console.log(document.body);
+console.log(document.title);
+// 没有 console.log(document,html);
+
+var i=0;
+setInterval(function(){
+    i++;
+    document.title=i;
+},500)
+</script>  
+</body>
+</html>

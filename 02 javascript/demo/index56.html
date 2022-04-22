@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var reg1=/a/; //字面量正则
+var reg2=new RegExp('a'); //构造函数正则
+console.log(reg1,reg2);
+var str='abc';
+var reg3=/str/;
+var reg4=new RegExp(str);
+console.log(reg3,reg4);
+
+var reg5=/abc/;
+var str5='abc';
+console.log(reg5.test(str5));
+console.log(reg5.exec(str5));
+</script>
+</body>
+</html>

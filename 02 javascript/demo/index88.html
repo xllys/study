@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <script>
+//这是一个厂子
+function fun(cName){
+    //这是人
+    var o=new Object();
+    o.name=cName;
+    //最终要返回一个对象
+    return o;
+}
+var obj1=fun('张三');
+var obj2=fun('李四');
+console.log(obj1,obj2);
+</script> -->
+
+<script>
+//都是一个厂子，但是每个人可能干的事情不同，所以要区分开
+function fun(type,text){
+    var o=new Object();
+    o.run=function(){
+        return 111;
+    }
+    if(type=='alert'){
+        window[type](text);
+    }
+    if(type=='confirm'){
+        window[type](text);
+    }
+    return o;
+}
+var obj1=fun('alert','123');
+var obj2=fun('confirm','你好呀');
+var obj3=fun('confirm','你好呀');
+console.log(obj2.run());
+console.log(obj3.run());
+console.log(obj2.run===obj3.run);
+</script>
+</body>
+</html>

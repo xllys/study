@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <script>
+//看一看\d后面是不是字母，是字母的匹配到
+var reg1=/\d(?=[a-z])/g;
+var str1='1a2d*%3aheirt4';
+        //*a*d*%*aheirt4
+console.log(str1.replace(reg1,'*'));
+
+//看一看\d后面是不是字母，不是字母的匹配到
+var reg2=/\d(?![a-z])/g;
+var str2='1a2d*%3aheirt4';
+        //1a2d*%3aheirt*
+console.log(str2.replace(reg2,'*'));
+</script> -->
+
+<input type="text" id="txt">
+<script>
+var txt=document.getElementById('txt');
+txt.oninput=function(){
+    //可以有数字字母，并且是3-6位
+    //必须有数字和字母
+    //(?=.*\d)任意字符后必须是数字
+    //(?=.*[a-z])任意字符后必须是字母
+    var reg=/^(?=.*\d)(?=.*[a-z])[0-9a-z]{3,6}$/i;
+    console.log(reg.test(this.value));
+}
+</script>
+</body>
+</html>

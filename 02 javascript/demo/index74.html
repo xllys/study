@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //第N个月兔子总对数=第N-1个月的总数+第N-2个月的总数
+function fun(n){
+    if(n<=0){
+        return 0;
+    }
+    if(n<=2){
+        return 1;
+    }
+    return fun(n-1)+fun(n-2);
+
+
+}
+console.log(fun(6));
+</script>
+</body>
+</html>

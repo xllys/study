@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function Hero(){
+    this.name='nihao';
+    this.sayme=function(){
+        alert('this is nihao');
+    }
+}
+Hero.prototype.name='hellow';
+Hero.prototype.sayme=function(){
+    alert('this is hellow');
+}
+var hero=new Hero();
+console.log(hero.name);
+console.log(hero.sayme);
+//nihao
+//ƒ (){ alert('this is nihao');}
+</script>
+</body>
+</html>

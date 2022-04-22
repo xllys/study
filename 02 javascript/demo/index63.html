@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    input{
+        outline: none;
+    }
+    .register{
+        margin: 0 auto;
+        width: 500px;
+    }
+    .reg-item{
+        width: 398px;
+        height: 50px;
+        margin: 30px 0;
+        border: 1px solid #ccc;
+    }
+    .reg-item label{
+        display: inline-block;
+        width: 87px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    .reg-item input{
+        width: 288px;
+        border: none;
+    }
+    .reg-error{
+        /* display: none; */
+        padding-top: 3px;
+        font-size: 12px;
+        color: orange;
+
+    }
+    </style>
+</head>
+<body>
+<form action="" class="register">
+    <div class="reg-item">
+        <div>
+            <label for="">手机号</label>
+            <input type="text" placeholder="请输入手机号" id="tel">
+        </div>
+        <div class="reg-error">
+            <span></span>
+            <!-- <span>*输入有误</span> -->
+        </div>
+    </div>
+    <div class="reg-item">
+        <div>
+            <label for="">用户名</label>
+            <input type="text" placeholder="请输入登录名" id="userName">
+        </div>
+        <div class="reg-error" >
+            <span></span>
+            <!-- <span>*只能输入4-20位，必须有数字，字母，"_"</span> -->
+        </div>
+    </div>
+</form>
+<script>
+var tel=document.getElementById('tel'),
+    userName=document.getElementById('userName');
+tel.oninput=function(){
+    var reg=/^1[3578]\d{9}$/;
+    fMsg(this,reg,'您输入的手机号有误');
+}
+userName.oninput=function(){
+    var reg=/^(?=.*\d)(?=.*[a-z])(?=.*\_)\w{4,20}$/;
+    fMsg(this,reg,'您输入的登录名有误');
+}
+//后续提示信息
+function fMsg(that,reg,errorMsg){
+    var span=that.parentNode.parentNode.children[1].querySelector('span');
+    if(reg.test(that.value)){
+        span.style.color='green';
+        span.innerHTML='*正确';
+    }else{
+        span.style.color='red';
+        span.innerHTML=errorMsg;
+    }
+}
+</script>   
+</body>
+</html>

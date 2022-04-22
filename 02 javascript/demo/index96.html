@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function Parent(cName,brr){
+    this.name=cName;
+    this.arr=brr;
+}
+function Child(){
+    //让Parent的this指向对象
+    //Parent.call(this);
+    Parent.call(this,'张三',['a','b','c']);
+    this.age=20;
+}
+//原型Child.prototype=new Parent();
+var obj1=new Child();
+var obj2=new Child();
+obj1.arr[0]='你好';
+// console.log(obj1.arr);
+// console.log(obj2.arr);
+console.log(obj1.name,obj2.name);
+console.log(obj1.arr,obj2.arr);
+</script>
+</body>
+</html>

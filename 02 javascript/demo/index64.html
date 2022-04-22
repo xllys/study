@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="tel"></p>
+<script>
+//1.封装一个函数，实现实现手机号钝点的功能
+//2.函数的实参传递一个手机号
+var tel=document.getElementById('tel');
+function fTelFormat(tel){
+    return tel.replace(/(\d{3})(\d{4})(\d{4})/,'$1 $2 $3');
+}
+tel.innerHTML=fTelFormat('15948168073');
+console.log(fTelFormat('15948168073'));
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//基本类型是按值访问的
+var a=10;
+var b=a;
+console.log(a,b);
+a=200;
+console.log(a,b);
+
+//引用类型，都是按照引用传递
+var o={a:1};
+var m=o;
+console.log(o.a,m.a);
+o.a='你好';
+console.log(o.a,m.a);
+</script>
+</body>
+</html>

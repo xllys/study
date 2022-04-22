@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var reg1=/[abc]/;
+var str1='a';
+console.log(reg1.test(str1));
+
+var reg2=/[^abc]/;
+var str2='d';
+console.log(reg2.test(str2));
+
+var reg3=/[0-9]/;
+var str3='6';
+console.log(reg3.test(str3));
+
+var reg4=/[a-zA-Z0-9]/;
+var str4='A';
+console.log(reg4.test(str4));
+
+var reg5=/\D/;
+var str5='6';
+console.log(reg5.test(str5));
+
+var reg6=/\w/;
+var str6='6_Az';
+console.log(reg6.test(str6));
+
+var reg7=/\s/;
+var str7='   ';
+console.log(reg7.test(str7));
+
+var reg8=/\ba/;
+var str8='ca';//b a
+console.log(reg8.test(str8));
+
+var reg9=/./;
+var str9='\n';
+console.log(reg9.test(str9));
+
+var reg=/\./;
+var str='a';
+console.log(reg.test(str));
+
+</script>
+</body>
+</html>

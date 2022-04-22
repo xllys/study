@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//浅拷贝1
+var obj={
+    a:1,
+    b:{
+        a:'你好',
+    }
+};
+function fun(obj){
+    var m={};
+    for(var k in obj){
+        m[k]=obj[k];
+    }
+    return m;
+}
+var createObj=fun(obj);
+console.log(createObj);
+console.log(createObj.b.a);
+console.log(obj.b.a);
+createObj.b.a='22222';
+console.log(createObj.b.a);
+console.log(obj.b.a);
+//浅拷贝2
+var o={
+    a:1,
+    b:{
+        a:'你好',
+    }
+};
+var m=Object.assign({},o);
+console.log(o,m);
+m.b.a='不好了';
+console.log(o,m);
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .is-fx{
+        position: fixed;
+        right: 3%;
+        bottom: 20%;
+        width: 100px;
+        height: 100px;
+        background: aquamarine;
+    }
+    </style>
+</head>
+<body style="height: 2000px;">
+<div id="isFx" class="is-fx"></div>
+<script>
+var isFx=document.getElementById('isFx');
+isFx.style.display='none';
+document.onscroll=function(){
+    //滚动的距离
+    //console.log(document.documentElement.scrollTop);
+    var sTop=document.documentElement.scrollTop;
+    //可视区域高度
+    var cHei=document.documentElement.clientHeight;
+    if(sTop>cHei){
+        isFx.style.display='block';
+    }else{
+        isFx.style.display='none';
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="tel">  <!--获取到value -->
+    <input type="button" value="替换" id="changeBtn">   <!--添加事件 -->
+    <div id="endTel"></div>   <!--放入最终值 -->
+<script>
+//1>给btn添加事件
+//2>获取到input的value
+var tel=document.getElementById('tel'),
+    changeBtn=document.getElementById('changeBtn'),
+    endTel=document.getElementById('endTel');
+changeBtn.onclick=function(){
+    //获取到input的value
+    var telVal=tel.value;
+    //console.log(telVal);
+    //最终赋值
+    endTel.innerText=fHide(telVal,3,4,'*');
+}
+function fHide(str,first,last,start){
+    //参数1：input的value
+    //参数2：是数字3==>开始的3位显示
+    //参数3：是数字4==>结束的4位显示
+    //参数4:代表中间的内容要被替换成*号
+    var len=str.length-first-last;
+    var sStart='';
+    for(var i=0;i<len;i++){
+        sStart+='*';
+    }
+    return str.substring(0,first)+sStart+str.slice(-last);
+}
+</script>  
+</body>
+</html>

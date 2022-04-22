@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="file" name="" id="fileExe">
+<script>
+var fileExe=document.getElementById('fileExe');
+fileExe.onchange=function(){
+    console.log(this.files[0]);
+    //获取到选择的文件名
+    var names=this.files[0].name;
+    //匹配正则
+    var reg=/(.jpg|.png|.jpeg)$/i;
+    //console.log(this.value);
+    //如果不匹配
+    if(!(reg.test(names))){
+        alert('文件名不匹配');
+        this.value='';
+    }
+}
+</script>
+</body>
+</html>

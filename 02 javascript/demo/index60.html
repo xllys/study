@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var reg1=/\d{3,6}/g;  //贪婪模式-----6
+var str1='12345678912345';
+console.log(str1.replace(reg1,'*'));
+
+var reg2=/\d{3,6}?/g;  //懒惰模式----3
+var str2='22345678922345';
+console.log(str2.replace(reg2,'*'));
+
+</script>   
+</body>
+</html>

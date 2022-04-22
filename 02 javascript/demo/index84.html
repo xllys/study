@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//最终返回的结果肯定是一个对象
+function fParseQueryString(url){
+    var obj={};
+    var urls=url.split('?');
+    //console.log(urls);
+    var arr=urls[1].split('&');
+    //console.log(arr);
+    for(var i=0,len=arr.length;i<len;i++){
+        //console.log(arr[i].split('='));
+        //brr[0]就是对象的key属性名
+        //brr[1]就是属性对象的value值
+        var brr=arr[i].split('=');
+        obj[brr[0]]=brr[1];
+    }
+    return obj;
+}
+console.log(fParseQueryString('https://coding.imooc.com/class/564.html?utm_term=JavaScript&utm_campaign=SEM&utm_medium=113&_channel_track_key=HvFKPJdj&utm_source=szjineng5&bd_vid=9832898094430947624'));
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function Fun(){
+    this.userName='张三'
+    this.run=function(){
+        return 123;
+    }
+
+}
+var obj1=new Fun();
+//console.log(obj1,Fun);
+console.log(obj1.userName);
+console.log(obj1.run());
+
+var obj2=Object.create(Array.prototype);
+console.log(obj2);
+</script>
+</body>
+</html>

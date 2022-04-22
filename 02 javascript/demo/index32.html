@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <input type="text">
+<input type="password"> -->
+<input type="file" id="files">
+<input type="button" id="btn" value="判断后缀名">
+<script> 
+//1>获取到btn-->要做点击事件
+//2>获取files-->后续要判断他的value
+//3>要知道.的位置
+//4.从.位置开始截取，截取.后面的内容
+//5.开始判断.后面的内容是否为：jpg,png...
+var btn=document.getElementById('btn'),
+   files=document.getElementById('files');
+btn.onclick=function(){
+    //files.value ==>文件的路径
+    // console.log(files.value);
+    var val=files.value;
+    //找到.的位置，也就是下标
+    var idx=val.indexOf('.');
+    //console.log(val,idx);
+    //截取.后面的内容
+    // console.log(val.slice(idx+1));
+    var fileName=(val.slice(idx+1));
+    if(fileName!='jpg'&&fileName!='png'){
+        console.log('文件有误');
+    }else{
+        console.log('上传正确');
+    }
+}
+</script>
+</body>
+</html>

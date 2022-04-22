@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//原型===>共享属性和方法
+//不好：无法给父构造函数传递参数
+// function Parent(){
+//     this.name='张三';
+//     this.arr=[1,2,3];
+// }
+// function Child(cName){
+//     this.age=20;
+//     this.cName=cName;
+// }
+// Child.prototype=new Parent();
+// var obj1=new Child('李四');
+// var obj2=new Child('王五');
+// obj1.arr[0]='你好';
+// console.log(obj1.name,obj2.age);
+// console.log(obj1.arr,obj2.arr);
+// console.log(obj1.cName,obj2.cName);
+//借用构造函数
+// function Parent(cName){
+//     this.name=cName;
+//     this.arr=[1,2,3];
+// }
+// function Child(cName){
+//     this.age=29;
+//     Parent.call(this,cName);
+// }
+// var obj1=new Child('李四');
+// var obj2=new Child('王五');
+// console.log(obj1.name,obj2.name);
+//组合继承
+function Parent(cName){
+    this.name=cName;
+}
+Parent.prototype.run=function(){
+    
+}
+function Child(cName){
+    this.age=20;
+    //借用构造函数
+    Parent.call(this,cName);
+}
+//原型
+Child.prototype= new Parent();
+var obj1=new Child('李四');
+var obj2=new Child('王五');
+console.log(obj1.name,obj2.name);
+console.log(obj1.run==obj2.run );
+</script>
+</body>
+</html>

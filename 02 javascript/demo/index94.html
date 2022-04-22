@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//原型链
+// function Fun(){
+//     this.name='张三';
+// }
+// Fun.prototype.name='李四';
+// var obj=new Fun();
+// console.log(obj.__proto__.__proto__.__proto__); //原型最顶端null
+// console.log(obj.name);
+
+function Parent(){
+    this.name='张三';
+}
+function Child(){
+    this.age=18;
+}
+//实现原型继承
+Child.prototype=new Parent();
+
+var obj=new Child();
+console.log(obj.name);
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main" class="main"></div>
+
+<ul id="uls">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>
+        <a href="" id="oA"></a>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        1
+        <span>隐藏</span>
+    </li>
+    <li>
+        2
+        <span>隐藏</span>
+    </li>
+    <li>
+        3
+        <span>隐藏</span>
+    </li>
+    <li>
+        4
+        <span>隐藏</span>
+    </li>
+    <li>
+        5
+        <span>隐藏</span>
+    </li>
+</ul>
+
+<script>
+var main=document.getElementById('main');
+// main.innerText='你好js';
+// main.innerHTML='你好js';
+
+main.innerHTML='<h1>你好js</h1>';
+console.log(main.nodeName);
+
+var uls=document.getElementById('uls');
+uls.firstElementChild.style.background='red';
+uls.lastElementChild.style.background='yellow';
+
+var oA=document.getElementById('oA');
+console.log(oA.parentNode.parentNode);
+
+var oSpan=document.getElementsByTagName('span');
+var spanLen=oSpan.length;
+for(i=0;i<spanLen;i++){
+    oSpan[i].onclick=function(){
+    // alert(1);
+    //点击哪一个span的父元素隐藏掉,this就是当前的span
+        this.parentNode.style.display='none';
+    }
+}
+
+var main=document.getElementById('main');
+console.log(main.className); //获取
+main.className='container';
+console.log(main.className); //获取
+</script>   
+</body>
+</html>

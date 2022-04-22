@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// var obj={
+//     str1:'456',
+//     a:1,
+//     b:2,
+//     c:3,
+//     fun:function(){
+//         return 111;
+//     },
+// };
+// for(var k in obj){
+//     console.log(obj[k]);
+// }
+// console.log(Object.keys(obj));
+// console.log(Object.values(obj))
+
+var obj1={
+    a:1,
+}
+var obj2={
+    b:2,
+}
+var o=Object.assign({},obj1,obj2);
+console.log(obj1,obj2);
+console.log(o);
+</script>
+</body>
+</html>

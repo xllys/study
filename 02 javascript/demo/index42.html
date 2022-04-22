@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .main{
+        width: 300px;
+        height: 300px;
+        background: fuchsia;
+    }
+    .wrap{
+        width: 100px;
+        height: 100px;
+        background: bisque;
+    }
+    </style>
+</head>
+<body>
+<div id="main" class="main">
+    <div class="wrap" id="wrap"></div>
+</div>   
+<script>
+var main=document.getElementById('main');
+var wrap=document.getElementById('wrap');
+main.onclick=function(){
+    alert('弹出[main]');
+}
+wrap.onclick=function(){
+    alert('弹出[wrap]')
+}
+//事件冒泡
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <script>
+var x=1;
+var obj={
+    x:2,
+    run:function(){
+        return this.x;
+    },
+};
+console.log(obj.run()); //2
+var f=obj.run;
+console.log(f()); //1
+</script> -->
+
+
+<!-- <div id="main">11111</div>
+<script>
+var main=document.getElementById('main');
+main.onclick=function(){
+    console.log(this); //这里的this代表了main，为什么？
+}
+
+var main={
+    onclick:function(){
+        console.log(this);
+    }
+}
+main.onclick();
+</script> -->
+
+<script>
+var x=1;
+var obj={
+    x:2,
+    run:function(){
+        return function(){
+            return this.x; //这里的this怎么代表window
+        };
+    },
+};
+console.log(obj.run()())  //1
+//等同于
+var f=obj.run;
+console.log(f()); //1
+
+</script>
+</body>
+</html>

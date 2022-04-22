@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// console.log(new Date());
+var date =new Date();
+console.log(date.getFullYear());       //年
+console.log('0'+(date.getMonth()+1));  //月
+console.log(date.getDate());           //日
+console.log(date.getHours());          //时
+console.log(date.getMinutes());        //分
+console.log(date.getSeconds());        //秒
+console.log(date.getFullYear()+'-'+'0'+(date.getMonth()+1)+'-'+date.getDate()+' '+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds());
+//2022-04-8 20：44
+console.log(new Date().getTime());
+
+var date=new Date(1649422216276);
+console.log(date.getFullYear());
+</script>
+</body>
+</html>

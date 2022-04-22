@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<label for="" id="oLabel">
+    <input type="radio" name="radios" id="T">
+    <input type="radio" name="radios" id="F">
+</label>   
+<script>
+var oLabel=document.getElementById('oLabel');
+var oInput=oLabel.getElementsByTagName('input');
+var ipLen=oInput.length;
+var count=0;
+for(var i=0;i<ipLen;i++){
+    oInput[i].setAttribute('data-title',i);
+    oInput[i].onclick=function(){
+        if(this.getAttribute('data-title')==0){
+            count+=2;
+        }
+    }
+}
+</script>
+</body>
+</html>

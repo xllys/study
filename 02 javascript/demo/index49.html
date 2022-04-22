@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .main{
+        width: 300px;
+        height: 300px;
+        background: blueviolet;
+    }
+    .wrap{
+        width: 100px;
+        height: 100px;
+        background: aqua;
+    }
+    </style>
+</head>
+<body>
+
+<div class="main" id="main">
+    <div class="wrap" id="wrap"></div>
+</div> 
+<a href="http://xuexiluxian.cn" id="goHref">跳转</a>
+<form action="http://xuexiluxian.cn" >
+    <input type="submit" value="提交">
+    
+</form>
+<script>
+var main =document.getElementById('main');
+var wrap=document.getElementById('wrap');
+main.onclick=function(){
+    alert('main');
+}
+wrap.onclick=function(e){
+    e.stopPropagation();
+    alert('wrap');
+}
+var goHref=document.getElementById('goHref');
+goHref.onclick=function(e){
+    e.preventDefault();
+    //return false;
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<!-- <input type="text" id="tel">
+<input type="button" value="验证" id="btn">
+<script>
+var btn=document.getElementById('btn'),
+    tel=document.getElementById('tel');
+btn.onclick=function(){
+    //正则
+    var reg=/^1[3578]\d{9}$/;
+    if (reg.test(tel.value)){
+        alert('手机号码正确');
+    }else{
+        alert('手机号码不正确');
+    }
+}
+</script> -->
+
+
+
+<!-- <script>
+var reg1=/^1/;
+var str1='a1';
+console.log(reg1.test(str1));
+
+//以数字1开始，数字1后面必须是数字\d
+var reg2=/^2\d/;
+var str2='2a';
+console.log(reg2.test(str2));
+
+//以数字1开始，以数字结尾，数字1后面必须是一位的数字
+var reg3=/^3\d$/;
+var str3='36dhfg978';
+console.log(reg3.test(str3));
+
+var reg4=/^a?$/;
+var str4='aa';
+console.log(reg4.test(str4));
+</script>     -->
+
+
+<input type="text" id="userName">
+<span id="msg"></span>
+<script>
+var userName=document.getElementById('userName');
+var msg=document.getElementById('msg');
+userName.oninput=function(){
+    var reg=/^\w{4,6}$/;
+    if(reg.test(this.value)){
+        msg.innerHTML='输入正确';
+    }else{
+        msg.innerHTML='输入内容不是4-6位的数字字母下划线';
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//出现次数最多字符的变量
+var value='';
+//出现的次数的变量
+var index=0;
+//原始字符串---->改成好计算的字符串[排序]
+var str='aaabbbcccaaabbbaaabbbbbbbbbb';
+//把字符串转换成数组
+var arr=str.split('');
+//数组进行排序，把数组再转换成字符串
+//console.log(arr.sort().join(''));
+str=arr.sort().join('');
+//正则匹配到了重复内容-----\1代表相同
+var reg=/(\w)\1+/g;
+// console.log(str.match(reg));
+//判断
+str.replace(reg,function(val,item){
+    //console.log(val,item);
+    if(index<val.length){
+        index=val.length;
+        value=item;
+    }
+
+})
+console.log('出现次数最多的字符是：'+value,'出现的次数是：'+index);
+</script>
+</body>
+</html>

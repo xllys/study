@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+//字面量
+var obj1={
+    userName:'张三',
+    age:18,
+    '你好':'123',
+    0:'是不是打印出来了',
+};
+var obj2={
+    userName:'张系'
+};
+console.log(obj1.userName,obj1.age);
+console.log(obj1['你好']);
+console.log(obj1['0']);
+
+var lis=document.getElementsByTagName('li');
+console.log(lis);
+
+var lis={
+    0:li,
+    1:li,
+    2:li,
+    length:3,
+}
+
+var obj3={   //属性
+    a:1,
+    b:'2',
+    c:true,
+    d:undefined,
+    e:null,
+    f:{},
+    g:[1,2,3,4],
+    h:function(){}   //属性/方法
+}
+</script>
+</body>
+</html>
