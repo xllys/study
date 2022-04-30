@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    ul{
+        list-style: none;
+    }
+    ul li{
+        float: left;
+        margin: 20px;
+    }
+    button{
+        margin: 20px;
+    }
+    </style>
+</head>
+<body>
+<!-- <div>可见</div>
+<div style="display: none;">不可见</div> -->
+<ul>
+    <li>苹果</li>
+    <li>三星</li>
+    <li>索尼</li>
+    <li>华为</li>  <!-- 不显示 -->
+    <li>联想</li>  <!-- 不显示 -->
+    <li>荣耀</li>  <!-- 不显示 -->
+    <li>其他品牌</li>
+</ul>
+<button>更多</button>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    //$('div:hidden').css('background','red');
+    //$('div:visible').css('background','blue');
+    // $('button').click(function(){
+    //     alert(1);
+    // })
+    // $('button').mouseover(function(){
+    //     alert(2);
+    // })
+    var str=$('ul li:gt(2):not(:last)');
+    str.css('display','none');
+    $('button').click(function(){
+        //is是用来做检测的
+        if(str.is(':visible')){
+            str.css('display','none');
+            $('button').text('更多');
+        }else{
+            str.css('display','block');
+            $('button').text('收起');
+        }
+        
+    })
+
+})
+</script>
+</body>
+</html>
+
+

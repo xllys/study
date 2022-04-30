@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    ul{
+        list-style: none;
+    }
+    </style>
+</head>
+<body>
+<!-- <ul>
+    <li>1</li>
+</ul>
+<ul>
+    <li>2</li>
+</ul> -->
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <button>包裹</button>
+    <button>不包裹</button>
+<h1>111</h1>
+<h1>222</h1>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    /* $('ul').wrap('<div>我是DIV</div>');
+    $("ul").unwrap(); */
+    $("button:first").click(function(){
+        $("li").wrap("<ul></ul>");
+    })
+    $("button:last").click(function(){
+        $("li").unwrap();
+    })
+    // $("h1").wrapAll('<div>我是DIV</div>');
+    $("h1").wrapInner('<div>我是DIV</div>');
+
+    
+
+})
+</script>
+</body>
+</html>

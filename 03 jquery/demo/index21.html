@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .news{
+        width: 500px;
+        height: 300px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+    }
+    ul li{
+        width: 500px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        background: bisque;
+    }
+    </style>
+</head>
+<body>
+<div class="news">
+    <ul>
+        <li>俄军在哈尔科夫发现多名乌克兰士兵遗体 身上藏地雷</li>
+        <li>致敬中国航天！女子用17个易拉罐还原天球仪</li>
+        <li>国台办：民进党当局一步步把台湾推向战争的灾难</li>
+        <li>超凡之美！全景重温神舟十三号载人飞船撤离</li>
+        <li>俄罗斯大动作，两个国家被“断气”，欧洲气价飙升！</li>
+    </ul>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    var len=$("ul li").length;
+    var height=$("ul li").first().height();
+    $("ul").height(len*height);
+    setInterval(function(){
+        $("ul").animate({"marginTop":-height},function(){
+        $("ul li").first().appendTo($("ul"));
+        $("ul").css({"marginTop":0})
+        })
+    },1000)
+    
+})
+</script>
+</body>
+</html>

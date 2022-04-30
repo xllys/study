@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .container{
+        width: 230px;
+        height: 230px;
+        background: rgb(62, 159, 164);
+        opacity: 0.3;
+        margin: 100px auto;
+        padding: 5px;
+    }
+    .top{
+        width: 230px;
+        height: 60px;
+        background: #6f6f6f;
+        border-radius: 10px;
+    }
+    .top p{
+        line-height: 30px;
+        color: white;
+        text-align: right;
+        height: 30px;
+    }
+    .bottom{
+        width: 230px;
+        height: 170px;
+    }
+    .left{
+        width: 150px;
+        height: 170px;
+        float: left;
+        margin-left: 5px;
+    }
+    .left input{
+        width: 40px;
+        height: 40px;
+        margin-top: 3px;
+    }
+    .right{
+        width: 70px;
+        height: 170px;
+        float: left;
+    }
+    .right input{
+        width: 70px;
+        height: 30px;
+        margin-top: 4px;
+
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="top">
+        <p class="txt1"></p>
+        <p class="txt2">0</p>
+    </div>
+    <div class="bottom">
+        <div class="left">
+            <input type="button" value="7">
+            <input type="button" value="8">
+            <input type="button" value="9">
+            <input type="button" value="4">
+            <input type="button" value="5">
+            <input type="button" value="6">
+            <input type="button" value="1">
+            <input type="button" value="2">
+            <input type="button" value="3">
+            <input type="button" value="C" class="c">
+            <input type="button" value="0">
+            <input type="button" value=".">
+        </div>
+        <div class="right">
+            <input type="button" value="/">
+            <input type="button" value="*">
+            <input type="button" value="-">
+            <input type="button" value="+">
+            <input type="button" value="=">
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){  
+    $(".left input:not('.c')").click(function(){
+        //如果txt2文本内容,已经有了.,将不再添加
+        if($(".txt2").text().indexOf(".")!=-1){
+            //txt2中已经有.了
+            if($(this).val()!="."){
+                $(".txt2").append($(this).val());
+            }
+        }else if($(".txt2").text()==="0"){
+            if($(this).val()==="."){
+                $(".txt2").append($(this).val());
+            }else{
+                $(".txt2").text($(this).val());
+            }
+            
+
+        }else{
+            //console.log($(this).val());
+            $(".txt2").append($(this).val());
+        }    
+    })
+    $(".right input:not(:last)").click(function(){
+        $(".txt1").text($(".txt2").text()+$(this).val())
+        $(".txt2").text("");
+    })
+    $(".right input").last().click(function(){
+        var t2=$(".txt2").text();
+        var t1=$(".txt1").text();
+        //var t3=t1+t2; //这里+是动态获取到
+        //console.log(t1[t1.length-1]);
+        $(".txt2").text(count[t1[t1.length-1]](t1,t2));
+        $(".txt1").text("");
+    })
+
+    var count={
+        "+":function(a,b){
+            return parseFloat(a)+parseFloat(b);
+        },
+        "-":function(a,b){
+            return parseFloat(a)-parseFloat(b);
+        },
+        "*":function(a,b){
+            return parseFloat(a)*parseFloat(b);
+        },
+        "/":function(a,b){
+            return parseFloat(a)/parseFloat(b);
+        },
+    }
+})
+</script>
+</body>
+</html>

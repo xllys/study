@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    #container{
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+    #container a{
+        text-decoration: none;
+        min-width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        color: #000;
+        border: 1px solid #ccc;
+        margin:  0 2px;
+        padding: 0 5px;
+        display: inline-block;
+    }
+    #container a.active{
+        background: cornflowerblue;
+        opacity: 0.5px;
+        color: #fff;
+    }
+    </style>
+</head>
+<body>
+<div id="container">
+    <!-- <a href="" class="firstPage">首页</a>
+    <a href="" class="prePage">上一页</a>
+    <a href="" class="active">1</a>
+    <a href="">2</a>
+    <a href="">3</a>
+    <a href="">4</a>
+    <a href="">5</a>
+    <a href="">10</a>
+    <a href="" class="nextPage">下一页</a>
+    <a href="" class="lastPage">尾页</a>
+    <span>共<span>10</span>页</span>
+    <span>共<span>300</span>条记录</span> -->
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.page.js"></script>
+<script>
+$(function(){
+    $("#container").page();
+})
+</script>
+</body>
+</html>

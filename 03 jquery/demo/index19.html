@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .main{
+        margin: 50px auto;
+        width: 920px;
+        height: 520px;
+        overflow: hidden;
+        position: relative;
+    }
+    ul,ol{
+        list-style: none;
+    }
+    ul{
+        width: 4600px;
+        height: 520px;
+    }
+    ul li{
+        float: left;
+        width: 920px;
+        height: 520px;
+    }
+    ul li img{
+        width: 920px;
+        height: 520px;
+    }
+    .icon div{
+        width:50px;
+        height: 45px;
+        position: absolute;
+        top:238px;
+    }
+    .icon div img{
+        width:50px;
+        height: 45px;
+    }
+    .left{
+        left: 10px;
+    }
+    .right{
+        right: 10px;
+    }
+    ol{
+        width: 920px;
+        height: 120px;
+        position: absolute;
+        bottom: 10px;
+        left: 0px;
+    }
+    ol li{
+        float: left;
+        width: 140px;
+        height:80px;
+        margin: 20px;
+    }
+    ol li img{
+        width: 140px;
+        height:80px;
+    }
+    ol li.active{
+        border: 3px solid aqua;
+    }
+    </style>
+</head>
+<body>
+<div class="main">
+    <ul>
+        <li title="0"><img src="img/1.jpg" alt=""></li>
+        <li title="1"><img src="img/2.jpg" alt=""></li>
+        <li title="2"><img src="img/3.jpg" alt=""></li>
+        <li title="3"><img src="img/4.jpg" alt=""></li>
+        <li title="4"><img src="img/5.jpg" alt=""></li>
+    </ul>
+    <ol>
+        <li class="active"><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/4.jpg" alt=""></li>
+        <li><img src="img/5.jpg" alt=""></li>
+    </ol>
+    <div class="icon">
+        <div class="left"><img src="img/h.jpg" alt=""></div>
+        <div class="right"><img src="img/q.jpg" alt=""></div>
+    </div>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    var index;
+    var li_width=$("ul li").first().innerWidth();
+    //console.log(li_width);
+    function changeClass(){
+        index=$("ul li").attr("title");
+        //console.log($("ul li").attr("title"));
+        $("ol li").eq(index).addClass("active").siblings().removeClass("active");
+    }
+   
+    $(".right").click(function(){
+        $("ul").stop(true).animate({"marginLeft":-li_width},1000,function(){
+            $("ul li").first().appendTo($("ul"));
+            $("ul").css({"marginLeft":0});
+            changeClass();
+        });
+       
+        
+    })
+    $(".left").click(function(){
+        $("ul").css({"marginLeft":-li_width});
+        $("ul li").last().prependTo($("ul"));
+        $("ul").stop(true).animate({"marginLeft":0},1000);
+        changeClass();
+        
+    })
+})
+</script>
+</body>
+</html>

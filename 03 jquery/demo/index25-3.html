@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){  
+    /* var arr=[6,8,9,66,22,33];
+    console.log($.inArray(66,arr));
+    console.log($.inArray(100,arr)); */
+
+    var arr=[6,8,9,66,22,33];
+    var $={
+        inArr:function(num,arr){
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]==num){
+                    return i;
+                }else if(i==arr.length-1){
+                    return -1;
+                }
+            }
+        }
+    }
+    console.log($.inArr(800,arr))
+})
+</script>
+</body>
+</html>

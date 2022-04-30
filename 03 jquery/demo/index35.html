@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   
+    </style>
+</head>
+<body>
+<select name="" id="city">
+    <option value="长春">长春</option>
+    <option value="上海">上海</option>
+    <option value="北京">北京</option>
+    <option value="南京">南京</option>
+    <option value="成都">成都</option>
+</select>
+<div id="container">
+    <!-- 城市:长春
+    日期:2022-04-30
+    温度:5-20 -->
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    $("#city").change(function(){
+        var html="";
+        $("#city option").each(function(){
+            if($(this).prop("selected")){
+                //console.log($(this).val());
+                $.ajax({
+                    url:"https://v.juhe.cn/weather/index",
+                    dataType:"jsonp",
+                    data:{
+                        cityname:$(this).val(),
+                        dtype:"json",
+                        key:"a993eef2505209fb69b3e850f5908c26",
+                    },
+                    success:function(data){
+                        //console.log(data.result.today);
+                        var datas=data.result.today;
+                        html='<h1>城市:${datas.city}</h1><h2>日期:${datas.data_y}</h2><h3>温度:${datas.temperatrue}</h3>'
+                        $("#container").html(html);
+                    }
+                })
+                
+            }
+        })
+        
+        
+    })
+})
+</script>
+</body>
+</html>

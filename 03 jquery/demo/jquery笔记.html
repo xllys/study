@@ -1,0 +1,366 @@
+一.简单框架封装_jQuery
+1.封装一个js库
+功能:
+    a.认知熟练js功底
+    b.操作dom元素简单
+2.jQuery
+    开始:
+    ;(function(){
+
+    })();
+3.$('#box').css('background','red').html('123')
+1》xx.css(): xxx返回一个对象
+2》返回this ==> 可以实现连缀    xx.a().b().c()
+3》$('#box') ==> $就是jQuery,jQuery它是一个函数,本身不能$().a():函数没有方法
+    解决：让jQuery这个函数return一个对象
+
+4》init和css或者html都是同级关系      init,css,html 都是在jQuery的原型中
+    如果init要用css
+解决：jQuery.prototype.init.prototype=jQuery.prototype
+
+二.jQuery_介绍_获取_DOM加载
+1》jQuery是什么
+    jQuery就是拿原生JS封装的一个使用起来特别简单的一个JS库
+2》jQuery能干什么
+    网页各种效果;验证
+3》jQuery版本和获取
+    jQuery官网:https://jquery.com/
+    每个版本对于浏览器支持程序不同，每个版本对于jQuery中的方法也有不同
+    jquery.min.js(把代码弄成了一行，压缩了)--项目上线后，占用空间比较小
+    jquery.js(没有压缩，正常写代码的格式)--开发阶段
+4》 版本jQuery:1.xx  2.xx  3.xx
+    1.xx ==> 兼容比较好
+    2.xx和3.xx  ==> 兼容不算太好(IE8) jQuery中使用了es6语法
+5》加载
+    window.onload  ==> 当DOM树加载完毕(必须div和img都加载完毕了才可以执行js代码)
+    $(document).ready(function(){})   简写：$(function(){}) 
+    //当DOM树加载就绪(只要div加载完毕，不管img加载完毕没有，都会执行js代码)
+    
+三.jQuery_选择器
+1》什么是选择器:(近似于js原生中的document.getElementById,document.getElementsByTagName,document.querySelectorAll)
+    通过各种方式来选取到元素
+2》基本选择器:   3-1
+    id选择器: $('#box')
+    class选择器:$('.box')
+    元素名称选择器:$('div')
+    所有元素选择器:$('*')
+    选取多个元素选择器:$('div,.item,span,p,#box')
+
+3》层次选择器:
+    本元素下所有次级元素:$('div span')
+    本元素下所一级(儿子)元素:$('div>span')
+    本元素同级下一个:$('div+span')
+    本元素同级下所有:$('div~span')
+
+4》基本过滤选择器:   3-2
+    :first    ==>选取到第一个元素
+    :last     ==>选取到最后一个元素
+    :not      ==>除了
+    :even     ==>选取到偶数行,索引从0开始
+    :odd      ==>选取到奇数行,索引从0开始
+    :eq       ==>找到第几个,索引从0开始
+    :gt       ==>选取索引大于的
+    :lt       ==>选取索引小于的
+    :header   ==>选取标题元素和h1.h2
+    :animated ==>执行动画的元素
+
+5》内容过滤选择器:
+    :contains  ==>含有某一个文本
+    :empty     ==>选取到不包含子元素的元素
+    :has       ==>选取到含有某一个元素的元素
+    :parent    ==>选取到含有子元素的元素
+
+6》可见性过滤选择器:   3-3  
+    :hidden    ==>选取到不可见的元素
+    :visible   ==>选取到可见的元素 
+-用来做判断    
+
+7》属性过滤选择器:     3-4
+    [id]       ==>选取到拥有id属性的元素<!--  -->
+    [id=box]   ==>选取到id=box的元素
+    [id!=box]  ==>选取到id不等于box的元素
+    [id^=a]    ==>选取到id的值以a开始
+    [id$=a]    ==>选取到id的值以a结束
+    [id*=a]    ==>选取到id值只要含有a
+    [id=a][class=b]  ==>复合选择器
+
+8》子元素过滤选择器:    3-5
+    :nth-child   ==>选取父级元素下的第几个子元素,index从1开始,(even,odd),2n倍数
+    :first-child ==>选取到第一个子元素
+    :last-child  ==>选取到最后一个子元素
+    :only-child  ==>选取到只有一个子元素的元素
+    ***注意***
+    $('ul li:first')       ==>选取到所有li的第一个
+    $('ul li:first-child') ==>选取到ul下面第一个li
+
+9》表单属性状态过滤选择器:   3-6
+    :enable    ==>选取到所有可用元素
+    :disable   ==>选取到所有不可用元素
+    :checked   ==>选取到所有选中的元素[单选,复选]
+    :selected  ==>选取到所有被选中的选项(option)元素[下拉框]
+
+10》表单对象属性过滤选择器:   3-7
+    :input     ==>选取所有的<input>,<textarea>,<select>,<button>元素
+    :text 
+
+11》对象之间的转换
+    jquery对象转换为DOM对象: (1)  $('#box')[0]    (2)  $('#box').get(0)
+    DOM对象转换为jquery对象:$(box)
+
+四.jQuery_DOM查找
+1.次级节点  4-1
+    children()  ==>查找到本元素内的所有子元素
+    find()      ==>查找到本元素内的次级元素(儿子辈分,孙子辈分...)
+
+2.父级节点
+    parent()    ==>通过本元素只能找到上一级(当前父元素)
+    parents()   ==>通过本元素可以找到上指定的一个父元素
+
+3.兄弟节点  4-2
+    next()      ==>+ 同级下一个
+    nextAll()   ==>~ 同级下所有
+    prev()      ==>  同级上一个
+    prevAll()   ==>  同级上所有
+    siblings    ==>  同级所有(不包含本身)
+
+五.jQuery_CSS类样式
+1.CSS类样式  5-1
+    addClass()    ==>给元素添加class
+    removeClass() ==>删除class值(括号为空则把所有的class的值全部删除掉,只删除值不删除class)
+    toggleClass() ==>如果存在(不存在)就删除(添加)一个类 【 切换 】
+2.显示隐藏(动画)  5-2
+    show()      ==>display:block
+    hide()      ==>display:none
+
+六.案例_手风琴
+七.案例_菜单
+
+八.jQuery_DOM过滤
+    eq()      ==>[方法]   8-1
+    index()   ==>获取到当前元素的索引值(从0开始)
+    is()      ==>检测   
+    not()     ==>[方法]   8-2
+    has()     ==>获取本元素下指定有子元素的元素,最终返回(本元素[父元素])
+    filter()  ==>筛选     8-3
+    slice()   ==>截取
+***find()和filter()区别***
+find()    只能查找次级元素(孩子)
+filter()  找孩子辈分还可以找到同级辈分
+
+九.jQuery_串联
+    add()     ==>和的关系
+    andSelf() ==>addBack()加入先前所选的加入当前元素中
+    contents()==>查找内部所有子节点(包括文本)
+    end()     ==>回到最近的一个"破坏性"操作之前,将匹配的元素列表变为前一次的状态
+
+十.jQuery_文档处理
+1.插入节点   10-1
+    内部插入
+        --(追加后)
+        append()    ==>父元素.append(子元素)
+        appendTo()  ==>子元素.appendTo(父元素)
+        --(前置前)
+        prepend()   ==>父元素.prepend(子元素)
+        prependTo() ==>子元素.prependTo(父元素)
+    外部插入
+        after()       ==>添加到外部下一个
+        before()      ==>添加到外部上一个
+        insertAfter() ==>
+        insertBefore()==>
+2.删除节点   10-2
+    remove()   ==>本身以及内部所有节点全部删除
+    empty()    ==>删除所有的子节点
+3.替换节点   10-3
+    replaceWith()    
+    replaceAll()      
+4.包裹节点   10-4
+    wrap()     ==>把所有匹配的元素用其他的元素包裹起来
+    unwrap()   ==>可以解除wrap的包裹
+    wrapAll()  ==>将所有匹配的元素用一个元素包裹起来
+    wrapInner()==>将每一个匹配的子节点用元素包裹起来
+        
+十一.jQuery_属性操作
+    attr()        ==>可以获取，可以设置被选元素的属性值   11-1
+    attr("title")       ==>1个参数为获取
+    attr("title","123") ==>2个参数为设置
+    removeAttr()  ==>删除属性     11-2
+    prop()       
+    removeProp()
+
+十二.jQuery_内容操作
+    html()
+    text()
+    val()   ==>[input]
+***不写参数为获取,1个参数为设置
+
+十三.jQuery_CSS类
+    css()         ==>1个参数为获取,2个参数为设置
+    对象参数:{
+        key:value,
+    }
+    addClass()    
+    removeClass() 
+    toggleClass() 
+
+十四.案例-tab切换
+
+十五.jQuery_DOM尺寸和位置
+1.尺寸                 15-1
+    width()
+    height()
+***没有参数==>获取值(number),一个参数==>设置,只计算width
+    innerWidth()
+    innerHeight()
+***没有参数==>获取值(number),计算width+padding
+    outerWidth()
+    outerHeight()
+***没有参数==>获取值(number),计算width+padding+border
+   一个参数==>outerWidth(true),计算width+padding+border+margin
+2.位置                 15-2
+    offset()      ==>获取当前位置到视口的偏移量(left,top)
+    offset(object)==>offset({
+        left:xx,
+        top:xx,
+    })
+    offset().left
+    offset().top
+    position()    ==>获取元素相对于父元素的偏移量
+    position().left
+    position().top
+    scrollTop()   ==>获取元素相对于滚动条的偏移量
+    scrollLeft()  ==>
+
+十六.案例_回到顶部
+
+十七.jQuery_动画(效果)
+1.基本
+    show()
+    hide()
+    toggle()
+2.滑动
+    slideDown()
+    slideUp()
+    slideToggle()
+3.淡入淡出
+    fadeIn()
+    fadeOut()
+    fadeTo()
+    fadeToggle()
+4.自定义
+    animate()
+    stop()
+    delay()
+
+十八.案例_推拉门
+十九.案例_图片切换
+二十.案例_多张图片切换
+二十一.案例_无缝滚动
+
+二十二.jQuery_事件
+1.事件类型
+    鼠标类:click,dblclick,mouseover,mouseout,mouseenter,mouseleave,mousedown,mouseup,hover()--合成事件
+    键盘类:keydown,keypress,keyup
+    其他类:blur,focus,change,resize,scroll,ready
+2.事件绑定
+    bind,unbind,on,off,one
+    on语法:元素.on(事件名称,fn)
+3.事件委托
+    live,on
+    on语法:父元素.on(事件名称,子元素,fn)
+4.事件对象event     e || window.event
+    event.type   ==>事件名称
+    event.pageX  ==>当前鼠标位置距离浏览器x
+    event.pageY  ==>当前鼠标位置距离浏览器y
+    event.target ==>目标值(谁触发的)  判断用的
+    event.stopPropagation()  ==>阻止冒泡
+    event.preventDefault()   ==>取消默认行为
+
+二十三.案例_自定义滚动条
+二十四.案例_计算器
+
+二十五.jQuery_核心函数
+1.核心函数    25-1
+    $(查找的字符串,待查找dom、jquery)
+2.对象访问
+    size()   ==>length
+    get()    ==>jquery对象转换为DOM对象
+3.数据缓存
+    data(key)
+    data(key,value)
+4.循环[遍历]   25-2
+    $.each
+    jq对象.each()  --必须是jq对象
+5.函数操作
+    $.proxy      ==>保留特定作用域
+6.其他函数           25-3
+    $.inArray()  ==>确定第一个参数,在数组中的位置的下标,没有找到返回-1
+
+二十六.瀑布流
+二十七.放大镜
+二十八. 动画_闪烁星星
+二十九.移入链接提示功能
+
+三十.jQuery插件
+1.方法介绍
+    JQuery.fn.extend(object) ==>扩展jQuery元素集来提供新的方法
+    JQuery.extend(object)    ==>扩展jQuery对象本身
+    $.fn.extend()  ==>$("#box").xxx()  :局部
+    $.extend()     ==>$.xxx()          :全局
+2.插件写法规则
+    1》引入方式
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="插件"></script>
+    2》插件命名
+        jquery.nav.js
+    3》插件内部--匿名函数自我执行
+        (function(){
+        })()
+    4》分号--避免出现问题
+        ;(function(){
+        })();
+    5》为了实现连缀写法，每一个插件最后返回this
+3.插件传递参数
+    1》插件的灵活性
+    2》传递参数:默认参数  修改参数
+
+三十一.案例_tab切换插件
+
+三十二.案例_图片轮播插件
+
+三十三.案例_分页插件
+
+三十四.jQuery_Ajax
+1.安装环境
+    必须:nodejs,apache
+    appser(设置端口号(8080,8888),数据库账号和密码)
+    测试安装:http://localhost:8888/
+2.ajax是什么
+    AJAX=Asynchronous JavaScript and XML(异步的JavaScript和XML);
+    AJAX 不是新的编程语言，而是一种使用现有标准的新方法;
+    AJAX 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容;
+    AJAX 不需要任何浏览器插件，但需要用户允许 JavaScript在浏览器上执行。
+3.ajax能干什么
+    表单注册,登录(业务逻辑的判断)
+    数据渲染
+4.ajax其他(面试)
+    a》异步,同步
+    b》get,post请求区别
+        get==>体现在路径(url)
+        post==>表单  post要比get安全;post要比get大
+5.方法
+    $.ajax({
+        url:路径
+        async:true(异步)
+        data:给服务器端数据
+        dataType:返回的数据类型
+        error:错误
+        jsonp:跨域(callback)
+        jsonpCallback:随机生成的函数名
+        success:成功载入后的回调函数
+        type:get/post
+    })
+****只要跨域:dataType:"jsonp"
+
+三十五.案例_跨域请求天气预报
+三十六.案例_ajax加载lodding
+    

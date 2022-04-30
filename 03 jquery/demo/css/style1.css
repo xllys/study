@@ -1,0 +1,17 @@
+*{margin: 0;padding: 0;}
+.main{
+    margin: 0 auto;
+    position: relative;
+}
+.item{
+    float: left;
+    padding: 15px 0 0 15px;
+}
+.pic{
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+}
+.pic img{
+    width: 158px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    .box1{
+        width: 1000px;
+        height: 50px;
+        background: aqua;
+        margin: 0 auto;
+        position: relative;
+    }
+    .box2{
+        width: 50px;
+        height: 50px;
+        background: royalblue;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .dv1{
+        width: 300px;
+        height: 200px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        position: relative;
+    }
+    .dv2{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box2"></div>
+</div>
+<div class="dv1">
+    <div class="dv2">
+        新华社洛杉矶4月27日电（记者谭晶晶）美国太空探索技术公司的载人“龙”飞船27日凌晨从佛罗里达州发射升空，
+        搭载美欧4名宇航员飞往国际空间站。
+　　    美国东部时间27日凌晨3时52分（北京时间27日15时52分），
+        在佛罗里达州肯尼迪航天中心，
+        太空探索技术公司的一枚“猎鹰9”运载火箭将载有4名宇航员的“龙”飞船发射升空。
+        按计划，飞船将在飞行16个多小时后抵达国际空间站并与之对接。
+　　    这是载人“龙”飞船第四次为国际空间站运送轮换宇航员。
+        参与这次代号“Crew-4”航天任务的4名宇航员分别是
+        美国航天局宇航员谢尔·林德格伦、鲍勃·海因斯、杰茜卡·沃特金斯和欧洲航天局宇航员萨曼塔·克里斯托福雷蒂。
+        “龙”飞船是美国首个由私营企业建造并运送宇航员往返空间站的载人飞船，
+        也是自美国航天飞机之后首个获美航天局认证的常规运送宇航员往返空间站的新型载人飞船。（完）
+    </div>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){  
+    $(".box2").mousedown(function(e){
+        var x=e.pageX-$(this).offset().left;  //盒子左侧到当前鼠标的距离[内部距离]
+        $(".box2").bind("mousemove",function(e){
+            var _x=e.pageX-$(".box1").offset().left-x ;   //总长-盒子内部距离left
+            var width=$(".box1").width()-$(".box2").width();
+            if(_x<0){_x=0;}else if(_x>width){_x=width;}
+            var t=_x/width;
+            var T=t*($(".dv2").height()-$(".dv1").height())
+            $(".box2").css("left",_x);
+            $(".dv2").css("top",-T);
+        })
+        $(".box2").mouseup(function(){
+            $(".box2").unbind("mousemove");
+        })
+    })
+})
+</script>
+</body>
+</html>

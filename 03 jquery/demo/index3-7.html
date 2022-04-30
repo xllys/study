@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <form action="">
+    <input type="button" value="Input Button"/>
+    <input type="checkbox" name="" id=""/>
+    <input type="file" name="" id=""/>
+    <input type="hidden" name=""/>
+    <input type="image" src="" alt=""/>
+    <input type="password" name="" id=""/>
+    <input type="radio" name="" id=""/>
+    <input type="reset" value=""/>
+    <input type="submit" value=""/>
+    <input type="text" name="" id=""/>
+    <select name="" id=""><option value="">Option</option></select>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>Button</button>
+</form> -->
+<div id="box">111111111</div>
+</body>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+/*     console.log($('input').length);  //input节点
+    console.log($(':input').length);
+    $(':text').css('background','red'); */
+    console.log($('#box')[0]);
+    console.log($('#box').get(0));
+    $('#box').get(0).style.background='red';
+})
+</script>
+</html>

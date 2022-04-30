@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background: cornflowerblue;
+    }
+    #dv1{
+        width: 300px;
+        height: 300px;
+        background: rgb(90, 222, 123);
+    }
+    #dv2{
+        width: 100px;
+        height: 100px;
+        background: rgb(247, 78, 149);
+    }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<button>按钮</button>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<div id="dv1">
+    <div id="dv2"></div>
+</div>
+<form action="a.html">
+    <input type="text">
+    <input type="submit" value="提交" id="sub">
+</form>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){  
+    $("#box").click(function(e){
+       console.log(e.type);
+       console.log(e.pageX);
+       console.log(e.pageY);
+       console.log(e.target);
+
+   })
+   $("button").click(function(){
+       $("ul").append("<li>"+($("li").length+1)+"</li>")
+   })
+   $("ul").click(function(e){
+        if(e.target.nodeName=="LI"){
+            $(e.target).css("background","yellow");
+        }
+   })
+
+   $("#dv1").click(function(){
+       alert("dv1");
+   })
+   $("#dv2").click(function(e){
+       e.stopPropagation();
+       alert("dv2");
+   })
+   $("#sub").click(function(e){
+       if($("input[type=text]").val()=="admin"){
+           location.href="b.html";
+       }else{
+            e.preventDefault();
+       }
+       
+   })
+
+})
+</script>
+</body>
+</html>

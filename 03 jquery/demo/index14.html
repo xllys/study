@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    #tab{
+        margin:100px 300px;
+        height: 300px;
+        
+    }
+    ul,ol{list-style: none;}
+    ul li{
+        float: left;
+        width: 100px;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+    }
+    .ulShow{
+        background: bisque;
+        border: 1px solid burlywood;
+        border-bottom: none;
+    }
+    .ulHide{
+        background: #fff;
+        border-bottom: 1px solid burlywood;
+
+    }
+    ol{
+        display: none;
+        width: 300px;
+        height: 250px;
+        background: bisque;
+    }
+    .olShow{
+        display: block;
+        border: 1px solid burlywood;
+        border-top: none;
+
+      
+    }
+    </style>
+</head>
+<body>
+<div id="tab">
+    <ul>
+        <li class="ulShow">最新上架</li>
+        <li class="ulHide">重点推荐</li>
+        <li class="ulHide">网络文学</li>
+    </ul>
+    <div>
+        <ol class="olShow">
+            <li>最新上架</li>
+            <li>最新上架</li>
+            <li>最新上架</li>
+        </ol>
+        <ol>
+            <li>重点推荐</li>
+            <li>重点推荐</li>
+            <li>重点推荐</li>
+        </ol>
+        <ol>
+            <li>网络文学</li>
+            <li>网络文学</li>
+            <li>网络文学</li>
+        </ol>
+    </div>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    $("#tab>ul li").click(function(){
+        //点击当前的加入ulShow删除掉ulHide
+        //$(this).addClass("ulShow").removeClass("ulHide");
+        //把所有兄弟li的class变为ulHide
+        //$(this).siblings().attr("class","ulHide");
+
+        $(this).siblings().removeClass("ulShow").addClass("ulHide");
+        $(this).removeClass("ulHide").addClass("ulShow");
+
+        var index=$(this).index();
+        $("#tab div ol").eq(index).addClass("olShow").siblings().removeClass("olShow");
+    })
+})
+</script>
+</body>
+</html>

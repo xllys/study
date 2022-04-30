@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    #tab1{
+        width: 400px;
+        height: auto;
+        border: 1px solid #ccc;
+    }
+    #tab2{
+        width: 200px;
+        height: auto;
+        border: 1px solid rebeccapurple;
+    }
+    ul,ol{
+        list-style: none;
+    }
+    ul li{
+        float: left;
+        width: 200px;
+        height: 100px;
+        text-align: center;
+    }
+    .hide{
+        display: none;
+    }
+    .active{
+        background: bisque;
+        opacity: 0.5;
+    }
+    ol li{
+        float: left;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: black;
+        margin: 20px;
+    }
+    #tab2 p{
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+    }
+    .bg{
+        background: red;
+    }
+    </style>
+</head>
+<body>
+<div id="tab1">
+    <ul>
+        <li class="active">信息公告</li>
+        <li>服务公告</li>
+    </ul>
+    <div>
+        <p>AAAAAAAAAAA</p>
+        <p class="hide">BBBBBBBBBBB</p>
+    </div>
+</div>  
+<div id="tab2">
+    <ol>
+        <li class="bg"></li>
+        <li></li>
+    </ol>
+    <div>
+        <p>111111111111</p>
+        <p class="hide">222222222222222222</p>
+    </div>
+</div> 
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery.tab.js"></script>
+<script>
+$(function(){
+    $("#tab1").tab();
+    $("#tab2").tab({
+        parent:"#tab2",
+        mouseEvent:"dblclick", 
+        active:"bg",
+    });
+})
+</script>
+</body>
+</html>

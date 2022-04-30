@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    #nav{
+        width: 400px;
+        height: 50px;
+        margin: 0 auto;
+        margin-top: 200px;
+    }
+    ul{
+        list-style: none;
+    }
+    ul li{
+        float: left;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        background: yellowgreen;
+        color: azure;
+    }
+    .item ul{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ul>
+            <li class="item">首页
+                <ul>
+                    <li>Home</li>
+                    <li>Home</li>
+                </ul>
+            </li>
+            <li class="item">新闻
+                <ul>
+                    <li>News</li>
+                    <li>News</li>
+                </ul>
+            </li>
+            <li class="item">列表
+                <ul>
+                    <li>List</li>
+                    <li>List</li>
+                </ul>
+            </li>
+            <li class="item">联系
+                <ul>
+                    <li>Tel</li>
+                    <li>Tel</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    $('.item').mouseover(function(){
+        // $(this).find('ul').show(500);
+        // $(this).find('ul').slideDown(500);
+        $(this).find('ul').stop(false,true).fadeIn(500);
+    }).mouseout(function(){
+        // $(this).find('ul').hide(500);
+        // $(this).find('ul').slideUp(500);
+        $(this).find('ul').stop(false,true).fadeOut(500);
+    })
+})
+</script>
+</body>
+</html>

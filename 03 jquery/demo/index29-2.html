@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    </style>
+</head>
+<body>
+<div title="我是div" id="box">11111111111</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    var title;
+    $("#box").hover(function(e){
+        var title=this.title;
+        console.log(this.title);
+        this.title="";
+        $("body").append("<p id='p'>"+title+"</p>");
+        $("#p").css({
+            background:"blue",
+            width:50,
+            height:50,
+            position:"absolute",
+            left:e.pageX,
+            top:e.pageY,
+        })
+    },function(){
+        this.title=title;
+        $("#p").remove();
+        
+    })
+    $("#box").mousemove(function(e){
+        $("#p").css({
+            position:"absolute",
+            left:e.pageX,
+            top:e.pageY,
+        })
+    })
+})
+</script>
+</body>
+</html>

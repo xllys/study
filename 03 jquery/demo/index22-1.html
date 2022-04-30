@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{margin: 0;padding: 0;}
+    #box{
+        width: 300px;
+        height: 300px;
+        background: cadetblue;
+    }
+    #dv1{
+        width: 100px;
+        height: 100px;
+        background: antiquewhite;
+    }
+    </style>
+</head>
+<body>
+<!-- <div id="box">
+    <div id="dv1"></div>
+</div> -->
+<!-- <input type="text"> -->
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<select name="" id="act">
+    <option value="北京">北京</option>
+    <option value="河北">河北</option>
+    <option value="山西">山西</option>
+</select>
+<select name="" id="city">
+    <option value="朝阳">朝阳</option>
+    <option value="石家庄">石家庄</option>
+    <option value="太原">太原</option>
+</select>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){  
+    /* $("#box").mouseover(function(){
+        alert(1);
+    }).mouseout(function(){
+        alert(2);
+    }) */
+    /* $("#box").mouseenter(function(){
+        alert(1);
+    }) */
+    /* $("#box").hover(function(){
+        alert(1111111);
+    },function(){
+        alert(2222222);
+    }) */
+    // $("input").blur(function(){
+    //     $(this).css("background","red");
+    // })
+     // $("ul li").each(function(index,item){
+    //     console.log(index)
+    //     console.log(item)
+
+    // }) 
+    $(window).resize(function(){
+        alert(1);
+    })
+    $(document).ready(function(){
+
+    })
+    $("#act").change(function(){
+        $("#act option").each(function(index,item){
+            if($(this).prop("selected")){
+                $("#city").val($("#city option").eq(index).val());
+                $("#city option").hide();
+            }
+        })
+    })
+
+})
+</script>
+</body>
+</html>

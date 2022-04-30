@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <div id="box">11111</div>
+<div class="item">22222</div>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<p>这是P标记</p>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    // $('#box').css('background','red');
+    // $('.item').css('fontSize','50px');
+    // $('div').css('color','blue');
+    // $('*').css('background','red');
+    //$('.item,li').css('background','pink');
+})
+</script> -->
+<div id="box">
+    <li>1111</li>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <div>
+        <ul>
+            <li>a</li>
+            <li>b</li>
+        </ul>
+    </div>
+</div>
+<span>上面1</span>
+<span>上面2</span>
+<div id="item">
+    <span>内部1</span>
+    <span>内部2</span>
+</div>
+<span>下面3</span>
+<span>下面4</span>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    // $('#box li').css('background','pink');
+    //$('#box>li').css('background','red');
+    //$('#box li').css('background','pink');
+    // $('#item+span').css('background','blue');
+    $('#item~span').css('background','blue');
+})
+</script>
+</body>
+</html>

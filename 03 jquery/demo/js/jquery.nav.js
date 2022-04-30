@@ -1,0 +1,19 @@
+;(function($){
+    //全局
+    $.extend({
+        "nav":function(){
+            $("ul").find("li").hover(function(){
+                $(this).hide(2000);
+            })
+        }
+    })
+    //局部
+    $.fn.extend({
+        "nav":function(){
+            $(this).find("li").hover(function(){
+                $(this).hide(2000);
+            })
+            return this;
+        }
+    })
+})(jQuery);

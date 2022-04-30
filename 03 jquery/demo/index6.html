@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+*{margin: 0;padding: 0;}
+dl{
+    width: 300px;
+}
+dl dt{
+    width: 300px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+dl dd{
+    display: none;
+}
+</style>
+<body>
+    <dl>
+        <dt>网页特效</dt>
+        <dd>手风琴</dd>
+        <dd>图片轮播</dd>
+        <dd>回到顶部</dd>
+    </dl>
+    <dl>
+        <dt>前端框架</dt>
+        <dd>vue</dd>
+        <dd>react</dd>
+        <dd>ng</dd>
+    </dl>
+    <dl>
+        <dt>图片工具</dt>
+        <dd>ps</dd>
+        <dd>3d</dd>
+        <dd>2d</dd>
+    </dl>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    $('dt').click(function(){
+        //1
+        // $('dd').hide();
+        // $(this).nextAll().show();
+        //2
+        // $(this).siblings().show().parent().siblings().find('dd').hide();
+        //3
+        if($(this).siblings().is(':visible')){
+            $(this).siblings().hide();
+        }else{
+            $(this).siblings().show();
+        }
+        $(this).parent().siblings().find('dd').hide();
+    })
+})
+</script>
+</body>
+</html>

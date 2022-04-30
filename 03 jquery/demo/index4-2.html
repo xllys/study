@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>上1</p>
+    <p>上2</p>
+    <div>===========</div>
+    <p>下1</p>
+    <p>下2</p>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    //$('div').next().css('background','red');
+    //$('div').nextAll().css('background','red');
+    //$('div').prev().css('background','red');
+    //$('div').prevAll().css('background','red');
+    $('div').siblings().css('background','red');
+})
+</script>
+</body>
+</html>

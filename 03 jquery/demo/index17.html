@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 300px;
+        height: 300px;
+        background: rgb(205, 152, 222);
+    }
+    </style>
+</head>
+<body>
+<button id="start">按钮</button>
+<button id="end">stop</button>
+<div id="box">
+
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+
+    //1
+    /* $("button").click(function(){
+        $("#box").hide(1000,function(){
+            $(this).show(3000,function(){
+                alert(1);
+            });
+        });
+    }) */
+    //1.9以上版本不支持
+    // $("button").toggle(function(){
+    //     alert(1);
+    // },function(){
+    //     alert(2);
+    // })
+
+    //2
+    // $("button").click(function(){
+    //     /* $("#box").slideUp(2000,function(){
+    //         $("#box").slideDown(2000);
+    //     }); */
+    //     $("#box").slideToggle(function(){
+    //         alert(1);
+    //     },function(){
+    //         alert(2);
+    //     })
+    // })
+
+    //3
+    /* $("button").click(function(){
+        //$("#box").fadeOut(2000);
+        //$("#box").fadeTo(2000,0.3);
+        $("#box").fadeToggle(1000);
+    }) */
+
+    //4
+    $("#start").click(function(){
+        // $("#box").animate({"marginLeft":800},1000,function(){
+        //     $(this).animate({"marginTop":200},2000);
+        // })
+        $("#box").animate({"marginLeft":800},1000);
+        $("#box").delay(3000).animate({"marginTop":200},2000);
+        $("#box").animate({"marginLeft":0},2000);
+    })
+    $("#end").click(function(){
+        //$("#box").stop();  //默认为false
+        //$("#box").stop(true);  //清空动画队列
+        //$("#box").stop(true,true);  //完成当前动画，把后面队列清空
+        //$("#box").stop(false,true);  //当前动画到最后一个状态，继续执行下面所有动画
+    })    
+  
+})
+</script>
+</body>
+</html>

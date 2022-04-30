@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    ul{display: none;}
+    </style>
+</head>
+<body>
+    <!-- <ul>
+        <li>1</li>
+        <li>2</li>
+        <li class="lis">3</li>
+        <li>4</li>
+    </ul> -->
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <ul>
+        <li>111111111</li>
+        <li>111111111</li>
+    </ul>
+    <ul>
+        <li>222222222</li>
+        <li>222222222</li>
+    </ul>
+    <ul>
+        <li>333333333</li>
+        <li>333333333</li>
+    </ul>
+    
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    // $('ul li:eq(2)').css('background','red');  //eq选择器 
+    // $('ul li').eq(2).css('background','blue');  //eq()方法
+    //$('.lis').hide().siblings().eq(1).hide();  //eq()方法操作
+    // $('li').click(function(){
+    //     console.log($(this).index());
+    //     //获取到当前(this)元素的索引值(下标值)
+    // })
+    $('button').click(function(){
+        var idx=$(this).index();//点击的获取到button的索引值
+        $('ul').eq(idx).show().siblings('ul').hide();
+    })
+    console.log($('ul li').parent().is('ul'));
+})
+</script>
+</body>
+</html>

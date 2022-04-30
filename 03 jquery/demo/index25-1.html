@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    span{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+<!-- <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<div id="box"></div> -->
+<form action="">
+    账号:<input type="text" id="userName"><span>账号不对</span>
+    <hr/>
+    密码:<input type="text" id="userPwd"><span>密码不对</span>
+    <hr/>
+    <input type="button" value="登录" id="btn">
+</form>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){  
+    // $("li",$("ul:first")).css("background","red");
+    // //$("ul").first().find("li")
+    // $("<div>123</div>").appendTo("body");
+    /* console.log($("li").length);  //size()
+    console.log($("li").get(0));
+    $("#box").data("userName","张三");
+    console.log($("#box").data("userName")); */
+
+    $("#userName").blur(function(){
+        if($(this).val()!="admin"){
+            $(this).next().show();
+            $(this).data("num",0);
+        }else{
+            $(this).next().hide();
+            $(this).data("num",1);
+        }
+    })
+    $("#userPwd").blur(function(){
+        if($(this).val()!="123456"){
+            $(this).next().show();
+            $(this).data("num",0);
+        }else{
+            $(this).next().hide();
+            $(this).data("num",1);
+        }
+    })
+    $(":input[type=button]").click(function(){
+        var nums=0;
+        var num1=parseInt($(":input:first").data("num"));
+        var num2=parseInt($(":input:eq(1)").data("num"));
+        if(num1+num2==2){
+            location.href="a.html";
+        }
+
+    })
+})
+</script>
+</body>
+</html>

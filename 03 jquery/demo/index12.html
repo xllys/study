@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <div id="box">
+    我是一个小小的box
+    <h1>我是box内的h1</h1>
+</div> -->
+<input type="text">
+<div></div>
+<button>按钮</button>
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+$(function(){
+   /*  console.log($("#box").html());
+    $("#box").html("123");
+    $("#box").html("<b>b标记</b>"); */
+
+   /*  console.log($("#box").text());
+    $("#box").text("<b>b标记</b>");
+    console.log($(":input").val());
+    $(":input").val("在jq中设置了") */
+
+    $("button").click(function(){
+        var val= $(":input").val();
+        $('div').html(val);
+    })
+})
+</script>
+</body>
+</html>

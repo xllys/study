@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- <div id="box">
+    <p>ppppp</p>
+    <h1>11111</h1>
+    2222222
+</div>
+<button id="btn">添加按钮</button>
+<button id="delete">删除按钮</button> -->
+<ul>
+    <li>1<button>删除</button></li>
+    <li>2<button>删除</button></li>
+    <li>3<button>删除</button></li>
+    <li>4<button>删除</button></li>
+    <li>5<button>删除</button></li>
+</ul>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+    //$("#box").remove();
+    //$("#box").empty();
+   /*  $("#btn").click(function(){
+        //在body中创建一个div
+        $("body").append("<div id='container'>这是一个DIV</div>");
+    })
+    $("#delete").click(function(){
+        $("#container").remove();
+    }) */
+    $("button").click(function(){
+        $(this).parent().remove();
+    })
+})
+</script>
+</body>
+</html>
